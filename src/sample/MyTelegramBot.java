@@ -20,7 +20,6 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
 
     public MyTelegramBot(String Token){
         this.Token = Token;
-        //1422704529:AAHK9yOYL7fTIYfhT-WybSrf8HbytRD_W9k
     }
 
     public synchronized void sendMsg(String chatId, String s) {
