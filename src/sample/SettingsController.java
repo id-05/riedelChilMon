@@ -7,26 +7,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import jssc.SerialPort;
-import jssc.SerialPortEvent;
-import jssc.SerialPortEventListener;
-import jssc.SerialPortException;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable, DAO {
 
-    private static SerialPort serialPort;
-
     @FXML
     public Pane titlePanel;
     public Button cleareBaseBut;
+    public TextField textBotToken, textBotPassword;
 
     @FXML
     public ComboBox<Integer> baudRateComBox;
@@ -34,6 +28,7 @@ public class SettingsController implements Initializable, DAO {
     public ComboBox<Integer> dataBitsComBox;
     public ComboBox<String> parityComBox;
     public ComboBox<String> stopBitComBox;
+    public ComboBox<String> timeZoneComboBox;
     ObservableList<String> portNumberItems = FXCollections.observableArrayList("COM1", "COM2", "COM3", "COM4","COM5", "COM6", "COM7", "COM8",
             "COM9", "COM10");
     ObservableList<Integer> baudRateItems = FXCollections.observableArrayList(600, 1200, 2400, 4800,9600,14400,19200,28800,
@@ -41,25 +36,17 @@ public class SettingsController implements Initializable, DAO {
     ObservableList<Integer> dataBitsItems = FXCollections.observableArrayList(5, 6, 7, 8);
     ObservableList<String> parityItems = FXCollections.observableArrayList("none", "odd", "even", "mark","space");
     ObservableList<String> stopBitItems = FXCollections.observableArrayList("1", "1.5", "2");
-
-
-    @FXML
-    public void Minimazed(MouseEvent event){
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.hide();
-    }
-
-    @FXML
-    public void Maximazed(MouseEvent event){
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setFullScreen(true);
-    }
+    ObservableList<String> timeZoneItems = FXCollections.observableArrayList("-12:00", "-11:00", "-10:00","-09:00", "-08:00", "-07:00",
+            "-06:00", "-05:00", "-04:00","-03:00", "-02:00", "-01:00","00:00", "+01:00", "+02:00","+03:00", "+04:00", "+05:00",
+            "+06:00", "+07:00","+08:00", "+09:00", "+10:00","+11:00", "+12:00","+13:00", "+14:00");
 
     @FXML
     public void Close(MouseEvent event){
         Main.stage.show();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.close();
+        saveStrParam("bottoken", textBotToken.getText());
+        saveStrParam("botpassword", textBotPassword.getText());
     }
 
     @FXML
@@ -75,6 +62,11 @@ public class SettingsController implements Initializable, DAO {
 
             statement = connection.createStatement();
             deleteSql = "DELETE FROM param";
+            statement.executeUpdate(deleteSql);
+            statement.close();
+
+            statement = connection.createStatement();
+            deleteSql = "DELETE FROM telegramuser";
             statement.executeUpdate(deleteSql);
             statement.close();
 
@@ -108,6 +100,21 @@ public class SettingsController implements Initializable, DAO {
             preparedStatement.setInt(3, 1);
             preparedStatement.executeUpdate();
 
+            preparedStatement = connection.prepareStatement("INSERT INTO param (name, valueStr, valueInt) VALUES (?, ?, ?)");
+            preparedStatement.setString(1, "bottoken");
+            preparedStatement.setString(2, "");
+            preparedStatement.setInt(3, 1);
+            preparedStatement.executeUpdate();
+
+            preparedStatement = connection.prepareStatement("INSERT INTO param (name, valueStr, valueInt) VALUES (?, ?, ?)");
+            preparedStatement.setString(1, "botpassword");
+            preparedStatement.setString(2, "");
+            preparedStatement.setInt(3, 1);
+            preparedStatement.executeUpdate();
+
+            textBotToken.setText("");
+            textBotPassword.setText("");
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -128,42 +135,8 @@ public class SettingsController implements Initializable, DAO {
         saveStrParam("comparity",parityComBox.getSelectionModel().getSelectedItem());
         saveIntParam("comdatabits",dataBitsComBox.getSelectionModel().getSelectedItem());
         saveStrParam("comstopbits",stopBitComBox.getSelectionModel().getSelectedItem());
+        saveStrParam("timezone",timeZoneComboBox.getSelectionModel().getSelectedItem());
     }
-
-    private static class PortReader implements SerialPortEventListener {
-
-        public void serialEvent(SerialPortEvent event) {
-            if(event.isRXCHAR() && event.getEventValue() > 0){
-                try {
-                    java.util.Date date = new Date();
-                    String data = date.getTime()+" : "+serialPort.readString(event.getEventValue());
-                    System.out.println(data);
-                    Connection connection = null;
-                    try {
-                        connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
-                        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO record (rec) VALUES (?)");
-                        preparedStatement.setString(1, data);
-                        preparedStatement.executeUpdate();
-                        preparedStatement.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    } finally {
-                        try {
-                            if (connection != null) {
-                                connection.close();
-                            }
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-                catch (SerialPortException ex) {
-                    System.out.println(ex);
-                }
-            }
-        }
-    }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -182,5 +155,10 @@ public class SettingsController implements Initializable, DAO {
         stopBitComBox.setValue(DisplayController.comStopBits);
         stopBitComBox.setItems(stopBitItems);
 
+        timeZoneComboBox.setValue(DisplayController.timeZone);
+        timeZoneComboBox.setItems(timeZoneItems);
+
+        textBotToken.setText(DisplayController.BotToken);
+        textBotPassword.setText(DisplayController.BotPassword);
     }
 }

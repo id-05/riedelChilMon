@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -171,7 +171,7 @@
                                           <Insets bottom="5.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <TextArea cache="true" prefHeight="38.0" prefWidth="116.0" />
+                                    <TextField fx:id="textBotToken" />
                                  </children>
                                  <HBox.margin>
                                     <Insets bottom="10.0" />
@@ -191,7 +191,7 @@
                                           <Insets bottom="5.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <TextArea prefHeight="38.0" prefWidth="116.0" />
+                                    <TextField fx:id="textBotPassword" />
                                  </children>
                                  <HBox.margin>
                                     <Insets bottom="10.0" />
@@ -208,14 +208,40 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #335566;">
                <children>
-                  <Text fill="WHITE" layoutX="65.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Base">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <VBox layoutX="47.0" layoutY="57.0" prefHeight="200.0" prefWidth="100.0">
+                  <VBox alignment="CENTER" prefHeight="227.0" prefWidth="196.0">
                      <children>
-                        <Button fx:id="cleareBaseBut" alignment="CENTER" mnemonicParsing="false" onAction="#ClearBase" text="Reset Date Base" />
+                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="196.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Base">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Button fx:id="cleareBaseBut" alignment="CENTER" mnemonicParsing="false" onAction="#ClearBase" prefHeight="25.0" prefWidth="136.0" text="Reset Date Base" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="196.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Zone">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <ComboBox fx:id="timeZoneComboBox" onAction="#saveComPortSetting" prefWidth="150.0" />
+                           </children>
+                           <opaqueInsets>
+                              <Insets top="25.0" />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </VBox>
                      </children>
                   </VBox>
                </children></AnchorPane>
