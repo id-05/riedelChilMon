@@ -48,7 +48,12 @@
                         <Insets right="200.0" />
                      </HBox.margin>
                   </Label>
-                  <FontAwesomeIcon fx:id="setingIcon" fill="WHITE" glyphName="GEAR" onKeyPressed="#OpenSettings" onMouseClicked="#OpenSettings" size="1.5em">
+                  <FontAwesomeIcon fx:id="charticon" fill="WHITE" glyphName="LINE_CHART" onMouseClicked="#OpenChart" size="1.5em">
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon fx:id="setingIcon" fill="WHITE" glyphName="GEAR" onMouseClicked="#OpenSettings" size="1.5em">
                      <HBox.margin>
                         <Insets right="10.0" top="5.0" />
                      </HBox.margin>

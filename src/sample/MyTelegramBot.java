@@ -2,12 +2,20 @@ package sample;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.image.PixelFormat;
+import javafx.scene.image.PixelReader;
+import javafx.scene.image.WritableImage;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
+import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, DAO {
@@ -162,6 +170,25 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
                         case "getstate":
                             sendState(update, DisplayController.newChillerState,"");
                             break;
+                        case "getchart":
+                            WritableImage image = ChartController.mainChart.snapshot(new SnapshotParameters(), null);
+
+                            PixelReader pixelReader = image.getPixelReader();
+                            int width = (int) image.getWidth();
+                            int height = (int) image.getHeight();
+
+                            byte[] byteArray = new byte[width * height * 4]; // 4 bytes per pixel (ARGB)
+
+                            pixelReader.getPixels(0, 0, width, height, PixelFormat.getByteBgraPreInstance(), byteArray, 0, width * 4);
+
+                            byte[] imageBytes =byteArray;
+                            String caption = "Lovely Gal";
+//
+//                            TelegramPhotoSender imgSender = new TelegramPhotoSender();
+//                            imgSender.sendPhotoMessage(recipient, imageBytes, caption);
+
+                            sendState(update, DisplayController.newChillerState,"");
+                            break;
                     }
                     break;
 
@@ -206,6 +233,7 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         ArrayList<MenuItem> menuItems = new ArrayList<>();
         menuItems.add(new MenuItem("Узнать текущее состояние","chillerstate","getstate"));
+        menuItems.add(new MenuItem("Узнать текущее состояние","chillerstate","getchart"));
         menuItems.add(new MenuItem("Настройки","settings","settings"));
         List<List<InlineKeyboardButton>> rowList = getMenuFromItemList(menuItems);
         inlineKeyboardMarkup.setKeyboard(rowList);
@@ -231,6 +259,45 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
     public String getBotToken() {
         return Token;
     }
+
+//    public void sendPhotoMessage(String recipient, byte[] imageBytes, String caption)
+//            throws Exception {
+//        byte[] encodedBytes = Base64.encodeBase64(imageBytes);
+//        String base64Image = new String(encodedBytes);
+//
+//        ImageMessage imageMsgObj = new ImageMessage();
+//        imageMsgObj.number = recipient;
+//        imageMsgObj.image = base64Image;
+//        imageMsgObj.caption = caption;
+//
+//        Gson gson = new Gson();
+//        String jsonPayload = gson.toJson(imageMsgObj);
+//
+//        URL url = new URL(GATEWAY_URL);
+//        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+//        conn.setDoOutput(true);
+//        conn.setRequestMethod("POST");
+//        conn.setRequestProperty("X-WM-CLIENT-ID", CLIENT_ID);
+//        conn.setRequestProperty("X-WM-CLIENT-SECRET", CLIENT_SECRET);
+//        conn.setRequestProperty("Content-Type", "application/json");
+//
+//        OutputStream os = conn.getOutputStream();
+//        os.write(jsonPayload.getBytes());
+//        os.flush();
+//        os.close();
+//
+//        int statusCode = conn.getResponseCode();
+//        System.out.println("Response from Telegram Gateway: \n");
+//        System.out.println("Status Code: " + statusCode);
+//        BufferedReader br = new BufferedReader(new InputStreamReader(
+//                (statusCode == 200) ? conn.getInputStream()
+//                        : conn.getErrorStream()));
+//        String output;
+//        while ((output = br.readLine()) != null) {
+//            System.out.println(output);
+//        }
+//        conn.disconnect();
+//    }
 
 }
 

@@ -84,6 +84,15 @@ public class DisplayController implements Initializable, DAO {
     }
 
     @FXML
+    public void OpenChart() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("chartform.fxml"));
+        Stage stageFrame = new Stage();
+        stageFrame.setScene(new Scene(root));
+        stageFrame.initStyle(StageStyle.TRANSPARENT);
+        stageFrame.show();
+    }
+
+    @FXML
     public void Start(){
         System.out.println("start pres");
         Connection connection = null;

@@ -111,6 +111,38 @@ public interface DAO {
         return telegramUserList;
     }
 
+    default List<ChillerState> getAllRecors(){
+        List<ChillerState> resultList = new ArrayList<>();
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
+            Statement statement = connection.createStatement();
+
+            String selectQuery = "SELECT * FROM record";
+            ResultSet resultSet = statement.executeQuery(selectQuery);
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String data = resultSet.getString("rec");
+                resultList.add(new ChillerState(data));
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return resultList;
+    }
+
     default void saveStrParam(String name, String value){
         Connection connection = null;
         try {
