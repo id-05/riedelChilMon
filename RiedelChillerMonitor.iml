@@ -22,5 +22,9 @@
     <orderEntry type="library" name="commons-logging-1.2" level="project" />
     <orderEntry type="library" name="json-20160810" level="project" />
     <orderEntry type="library" name="guava-13.0.1" level="project" />
+    <orderEntry type="library" name="telegrambots-abilities-5.0.1" level="project" />
+    <orderEntry type="library" name="httpmime-4.5.14" level="project" />
+    <orderEntry type="library" name="jfreechart-1.0.19" level="project" />
+    <orderEntry type="library" name="jcommon-1.0.24" level="project" />
   </component>
 </module>

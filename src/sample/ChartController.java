@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class ChartController implements Initializable, DAO {
     @FXML
-    public static LineChart mainChart;
+    public LineChart mainChart;
     @FXML
     public NumberAxis xAxis, yAxis;
 
@@ -31,7 +31,7 @@ public class ChartController implements Initializable, DAO {
         xAxis.setLabel("Age");
         yAxis = new NumberAxis();
         yAxis.setLabel("Salary (INR)");
-        mainChart.setTitle("Average salary per age");
+        //mainChart.setTitle("Average salary per age");
 
         XYChart.Series data = new XYChart.Series<Number, Number>();
         int i = 0;

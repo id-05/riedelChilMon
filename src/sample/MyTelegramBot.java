@@ -2,29 +2,36 @@ package sample;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import javafx.scene.SnapshotParameters;
-import javafx.scene.image.PixelFormat;
-import javafx.scene.image.PixelReader;
-import javafx.scene.image.WritableImage;
+import javafx.scene.chart.LineChart;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
+import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-
-import java.nio.file.Files;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
+
+import org.jfree.chart.ChartUtilities;
+
 
 public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, DAO {
 
     String Token;
-    String UserName = "bitserver_bot";
+    String UserName = "riedelChillerMonitor";
     String welcometext = "Я бот - который может получать данные от контроллера чиллеров Riedel и сообщать их пользователям!";
     boolean registerStart = false;
     boolean password = false;
+    public LineChart mainChart;
 
     public MyTelegramBot(String Token){
         this.Token = Token;
@@ -171,22 +178,35 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
                             sendState(update, DisplayController.newChillerState,"");
                             break;
                         case "getchart":
-                            WritableImage image = ChartController.mainChart.snapshot(new SnapshotParameters(), null);
-
-                            PixelReader pixelReader = image.getPixelReader();
-                            int width = (int) image.getWidth();
-                            int height = (int) image.getHeight();
-
-                            byte[] byteArray = new byte[width * height * 4]; // 4 bytes per pixel (ARGB)
-
-                            pixelReader.getPixels(0, 0, width, height, PixelFormat.getByteBgraPreInstance(), byteArray, 0, width * 4);
-
-                            byte[] imageBytes =byteArray;
-                            String caption = "Lovely Gal";
-//
-//                            TelegramPhotoSender imgSender = new TelegramPhotoSender();
-//                            imgSender.sendPhotoMessage(recipient, imageBytes, caption);
-
+                            XYSeriesCollection data = new XYSeriesCollection();
+                            XYSeries series = new XYSeries("XY Series");
+                            int i = 0;
+                            for (ChillerState butChillerState : getAllRecors()) {
+                                series.add(i, butChillerState.getTpo());
+                                i++;
+                            }
+                            data.addSeries(series);
+                            JFreeChart chart = ChartFactory.createXYLineChart("Tilte",
+                                    "time", "Temperature", data, PlotOrientation.VERTICAL, true,
+                                    false, false);
+                            File file = new File("./source.png");
+                            try {
+                                ChartUtilities.saveChartAsPNG(file, chart, 400, 300);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                            String caption = "test";
+                            SendPhoto sendPhoto = SendPhoto.builder()
+                                    .chatId(update.getCallbackQuery().getMessage().getChat().getId().toString())
+                                    .photo(new InputFile(file))
+                                    .caption(caption)
+                                    .parseMode(ParseMode.HTML)
+                                    .build();
+                            try {
+                                execute(sendPhoto);
+                            } catch (Exception e) {
+                                System.out.println(e.getMessage());
+                            }
                             sendState(update, DisplayController.newChillerState,"");
                             break;
                     }
@@ -233,7 +253,7 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         ArrayList<MenuItem> menuItems = new ArrayList<>();
         menuItems.add(new MenuItem("Узнать текущее состояние","chillerstate","getstate"));
-        menuItems.add(new MenuItem("Узнать текущее состояние","chillerstate","getchart"));
+        menuItems.add(new MenuItem("Получить график","chillerstate","getchart"));
         menuItems.add(new MenuItem("Настройки","settings","settings"));
         List<List<InlineKeyboardButton>> rowList = getMenuFromItemList(menuItems);
         inlineKeyboardMarkup.setKeyboard(rowList);

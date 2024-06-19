@@ -32,7 +32,7 @@
       <HBox prefHeight="372.0" prefWidth="482.0" BorderPane.alignment="CENTER">
          <LineChart fx:id="mainChart">
             <xAxis>
-               <NumberAxis label="Year" tickLabelFill="WHITE" fx:id="xAxis" >
+               <NumberAxis label="Year" tickLabelFill="WHITE" fx:id="xAxis">
                   <tickLabelFont>
                      <Font name="System Bold" size="14.0" />
                   </tickLabelFont></NumberAxis>
