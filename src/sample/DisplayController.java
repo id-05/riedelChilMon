@@ -109,7 +109,7 @@ public class DisplayController implements Initializable, DAO {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String data = resultSet.getString("rec");
-                System.out.println("ID: " + id + " : " + data);
+                System.out.println("ID: " + id + " : " + data+ "    ");
             }
 
             resultSet.close();

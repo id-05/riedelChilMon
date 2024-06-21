@@ -50,6 +50,29 @@ public class SettingsController implements Initializable, DAO {
     }
 
     @FXML
+    public void ClearOnlyRec() {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
+            Statement statement = connection.createStatement();
+
+            String deleteSql = "DELETE FROM record";
+            statement.executeUpdate(deleteSql);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @FXML
     public void ClearBase() {
         Connection connection = null;
         try {

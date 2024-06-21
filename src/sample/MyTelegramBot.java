@@ -6,8 +6,15 @@ import javafx.scene.chart.LineChart;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.general.SeriesException;
+import org.jfree.data.time.Day;
+import org.jfree.data.time.Minute;
+import org.jfree.data.time.TimeSeries;
+import org.jfree.data.time.TimeSeriesCollection;
+import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.date.EasterSundayRule;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
@@ -18,8 +25,14 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import java.io.File;
 import java.io.IOException;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.jfree.chart.ChartUtilities;
 
@@ -186,16 +199,25 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
                                 i++;
                             }
                             data.addSeries(series);
-                            JFreeChart chart = ChartFactory.createXYLineChart("Tilte",
-                                    "time", "Temperature", data, PlotOrientation.VERTICAL, true,
-                                    false, false);
+
+                            XYDataset dataset = createDataset();
+
+                            JFreeChart chart = ChartFactory.createTimeSeriesChart(
+                                    "T(t) last hour", "time", "Temperature", dataset, true, false, false);
+//
+//                            JFreeChart chart = ChartFactory.createXYLineChart("Tilte",
+//                                    "time", "Temperature", data, PlotOrientation.VERTICAL, true,
+//                                    false, false);
+
+
                             File file = new File("./source.png");
                             try {
-                                ChartUtilities.saveChartAsPNG(file, chart, 400, 300);
+                                ChartUtilities.saveChartAsPNG(file, chart, 500, 300);
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            String caption = "test";
+
+                            String caption = "График температуры за выбранный период";
                             SendPhoto sendPhoto = SendPhoto.builder()
                                     .chatId(update.getCallbackQuery().getMessage().getChat().getId().toString())
                                     .photo(new InputFile(file))
@@ -280,44 +302,33 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
         return Token;
     }
 
-//    public void sendPhotoMessage(String recipient, byte[] imageBytes, String caption)
-//            throws Exception {
-//        byte[] encodedBytes = Base64.encodeBase64(imageBytes);
-//        String base64Image = new String(encodedBytes);
-//
-//        ImageMessage imageMsgObj = new ImageMessage();
-//        imageMsgObj.number = recipient;
-//        imageMsgObj.image = base64Image;
-//        imageMsgObj.caption = caption;
-//
-//        Gson gson = new Gson();
-//        String jsonPayload = gson.toJson(imageMsgObj);
-//
-//        URL url = new URL(GATEWAY_URL);
-//        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-//        conn.setDoOutput(true);
-//        conn.setRequestMethod("POST");
-//        conn.setRequestProperty("X-WM-CLIENT-ID", CLIENT_ID);
-//        conn.setRequestProperty("X-WM-CLIENT-SECRET", CLIENT_SECRET);
-//        conn.setRequestProperty("Content-Type", "application/json");
-//
-//        OutputStream os = conn.getOutputStream();
-//        os.write(jsonPayload.getBytes());
-//        os.flush();
-//        os.close();
-//
-//        int statusCode = conn.getResponseCode();
-//        System.out.println("Response from Telegram Gateway: \n");
-//        System.out.println("Status Code: " + statusCode);
-//        BufferedReader br = new BufferedReader(new InputStreamReader(
-//                (statusCode == 200) ? conn.getInputStream()
-//                        : conn.getErrorStream()));
-//        String output;
-//        while ((output = br.readLine()) != null) {
-//            System.out.println(output);
-//        }
-//        conn.disconnect();
-//    }
+    private XYDataset createDataset()
+    {
+        TimeSeriesCollection dataset = new TimeSeriesCollection();
+        TimeSeries seriesTpi = new TimeSeries("Tpi");
+        TimeSeries seriesTpo = new TimeSeries("Tpo");
+        TimeSeries seriesTsi = new TimeSeries("Tsi");
+        TimeSeries seriesTso = new TimeSeries("Tso");
+        for (ChillerState butChillerState : getAllRecors()) {
+            try {
+                Double temp = butChillerState.getTpi();
+                DateFormat format = new SimpleDateFormat("hh:mm d/MM/yyyy", Locale.ENGLISH);
+                Date date = format.parse(butChillerState.getDate());
+                Minute m = new Minute(date);
+                seriesTpi.add(m, temp);
+                seriesTpo.add(m,butChillerState.getTpo());
+                seriesTsi.add(m,butChillerState.getTsi());
+                seriesTso.add(m,butChillerState.getTso());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        dataset.addSeries(seriesTpi);
+        dataset.addSeries(seriesTpo);
+        dataset.addSeries(seriesTsi);
+        dataset.addSeries(seriesTso);
+        return dataset;
+    }
 
 }
 

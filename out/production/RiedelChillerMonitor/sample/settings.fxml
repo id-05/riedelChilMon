@@ -220,7 +220,7 @@
                                     <Insets bottom="15.0" />
                                  </VBox.margin>
                               </Text>
-                              <Button fx:id="cleareBaseBut" alignment="CENTER" mnemonicParsing="false" onAction="#ClearBase" prefHeight="25.0" prefWidth="136.0" text="Reset Date Base" />
+                              <Button fx:id="cleareBaseBut" alignment="CENTER" mnemonicParsing="false" onAction="#ClearOnlyRec" prefHeight="25.0" prefWidth="136.0" text="Reset Date Base" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="70.0" prefWidth="196.0">
