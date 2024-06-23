@@ -11,9 +11,10 @@ public interface DAO {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
 
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO telegramuser (tid,name) VALUES (?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO telegramuser (tid,name,filter) VALUES (?,?,?)");
             preparedStatement.setString(1, tUser.getId());
             preparedStatement.setString(2, tUser.getName());
+            preparedStatement.setString(3, tUser.getFilter());
             preparedStatement.executeUpdate();
             preparedStatement.close();
         } catch (SQLException e) {

@@ -161,6 +161,7 @@ public class DisplayController implements Initializable, DAO {
                 try {
                     Date date = new Date();
                     String data = date.getTime()+ " : "+serialPort.readString(event.getEventValue());
+                    System.out.println(data);
                     if(newChillerState != null){
                         oldChillerState = newChillerState;
                     }

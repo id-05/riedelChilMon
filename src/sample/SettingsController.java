@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -15,12 +16,17 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
+import static sample.DisplayController.bot;
+
 public class SettingsController implements Initializable, DAO {
 
     @FXML
     public Pane titlePanel;
     public Button cleareBaseBut;
-    public TextField textBotToken, textBotPassword;
+    public TextField textBotToken;
+    public PasswordField textBotPassword;
+    public Button testMes;
+    public Button butClearUserList;
 
     @FXML
     public ComboBox<Integer> baudRateComBox;
@@ -47,6 +53,37 @@ public class SettingsController implements Initializable, DAO {
         stage.close();
         saveStrParam("bottoken", textBotToken.getText());
         saveStrParam("botpassword", textBotPassword.getText());
+    }
+
+    @FXML
+    public void sendTestMes(){
+        for(TelegramUser tUser:getAllTelegramUser()){
+            bot.sendTestMes(tUser.getId(),"Test Message!");
+        }
+    }
+
+    @FXML
+    public void ClearUserList(){
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
+            Statement statement = connection.createStatement();
+
+            statement = connection.createStatement();
+            String deleteSql = "DELETE FROM telegramuser";
+            statement.executeUpdate(deleteSql);
+            statement.close();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML

@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -174,7 +175,7 @@
                                     <TextField fx:id="textBotToken" />
                                  </children>
                                  <HBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </VBox>
                            </children>
@@ -191,7 +192,7 @@
                                           <Insets bottom="5.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <TextField fx:id="textBotPassword" />
+                                    <PasswordField fx:id="textBotPassword" />
                                  </children>
                                  <HBox.margin>
                                     <Insets bottom="10.0" />
@@ -199,8 +200,32 @@
                               </VBox>
                            </children>
                            <VBox.margin>
-                              <Insets top="10.0" />
+                              <Insets />
                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="46.0" prefWidth="199.0">
+                           <children>
+                              <VBox prefHeight="10.0" prefWidth="168.0">
+                                 <children>
+                                    <Button fx:id="testMes" mnemonicParsing="false" onAction="#sendTestMes" prefHeight="25.0" prefWidth="176.0" text="Send Test Message" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="68.0" prefWidth="185.0">
+                           <children>
+                              <VBox prefHeight="59.0" prefWidth="168.0">
+                                 <children>
+                                    <Button fx:id="butClearUserList" mnemonicParsing="false" onAction="#ClearUserList" prefHeight="25.0" prefWidth="176.0" text="Clear User List" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
                         </HBox>
                      </children>
                   </VBox>

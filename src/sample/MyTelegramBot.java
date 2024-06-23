@@ -5,16 +5,12 @@ import com.google.gson.JsonParser;
 import javafx.scene.chart.LineChart;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.general.SeriesException;
-import org.jfree.data.time.Day;
 import org.jfree.data.time.Minute;
 import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.date.EasterSundayRule;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
@@ -25,9 +21,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import java.io.File;
 import java.io.IOException;
-import java.sql.Time;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,7 +30,6 @@ import java.util.Locale;
 
 import org.jfree.chart.ChartUtilities;
 
-
 public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, DAO {
 
     String Token;
@@ -44,7 +37,6 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
     String welcometext = "Я бот - который может получать данные от контроллера чиллеров Riedel и сообщать их пользователям!";
     boolean registerStart = false;
     boolean password = false;
-    public LineChart mainChart;
 
     public MyTelegramBot(String Token){
         this.Token = Token;
@@ -105,6 +97,10 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
                 append("Т вторичный выход").append(": ").append(chillerState.getTso()).append("°C").append("\n").
                 append("Ошибки").append(": ").append(chillerState.getErrors()).append("\n");
         sendMsg(chatId,stringBuilder.toString());
+    }
+
+    public void sendTestMes(String chatId, String message){
+        sendMsg(chatId,message);
     }
 
     @Override
@@ -204,12 +200,6 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
 
                             JFreeChart chart = ChartFactory.createTimeSeriesChart(
                                     "T(t) last hour", "time", "Temperature", dataset, true, false, false);
-//
-//                            JFreeChart chart = ChartFactory.createXYLineChart("Tilte",
-//                                    "time", "Temperature", data, PlotOrientation.VERTICAL, true,
-//                                    false, false);
-
-
                             File file = new File("./source.png");
                             try {
                                 ChartUtilities.saveChartAsPNG(file, chart, 500, 300);
@@ -229,7 +219,6 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
                             } catch (Exception e) {
                                 System.out.println(e.getMessage());
                             }
-                            sendState(update, DisplayController.newChillerState,"");
                             break;
                     }
                     break;
@@ -253,6 +242,7 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         ArrayList<MenuItem> menuItems = new ArrayList<>();
         JsonParser parser = new JsonParser();
+        System.out.println(user.getFilter());
         JsonObject jsonObject = parser.parse(user.getFilter()).getAsJsonObject();
         menuItems.add(new MenuItem("Inform me" + " : "+jsonObject.get("InformMe").getAsString(),"chSub","InformMe" + ":"+jsonObject.get("InformMe").getAsString()));
         menuItems.add(new MenuItem("Only errors" + " : "+jsonObject.get("OnlyErrors").getAsString(),"chSub","OnlyErrors" + ":"+jsonObject.get("OnlyErrors").getAsString()));
