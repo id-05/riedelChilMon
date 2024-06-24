@@ -2,7 +2,6 @@ package sample;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import javafx.scene.chart.LineChart;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Minute;
@@ -27,8 +26,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-
 import org.jfree.chart.ChartUtilities;
+import sample.units.ChillerState;
+import sample.units.MenuItem;
+import sample.units.ProgrammSettings;
+import sample.units.TelegramUser;
+import sample.utilits.BotHelper;
+import sample.utilits.DAO;
 
 public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, DAO {
 
@@ -37,9 +41,12 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
     String welcometext = "Я бот - который может получать данные от контроллера чиллеров Riedel и сообщать их пользователям!";
     boolean registerStart = false;
     boolean password = false;
+    ChillerState curChillerState;
+    ProgrammSettings progSet = new ProgrammSettings();
 
-    public MyTelegramBot(String Token){
+    public MyTelegramBot(String Token, ChillerState curChillerState){
         this.Token = Token;
+        this.curChillerState = curChillerState;
     }
 
     public synchronized void sendMsg(String chatId, String s) {
@@ -67,13 +74,13 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
     }
 
     public void sendStateAllUser(ChillerState chillerState){
-        for(TelegramUser tUser:getAllTelegramUser()){
+        for(TelegramUser tUser: getAllTelegramUser()){
             sendState(tUser.getId(),chillerState, "Внимание! Обнаружены ошибки на устройстве!");
         }
     }
 
     public void sendStateAllUser(String message, ChillerState oldChillerState){
-        for(TelegramUser tUser:getAllTelegramUser()){
+        for(TelegramUser tUser: getAllTelegramUser()){
             sendState(tUser.getId(),oldChillerState, message);
         }
     }
@@ -127,7 +134,7 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
                             }
                         }else{
                             String bufStr = update.getMessage().getText().toUpperCase().replaceAll("[\\s|\\u00A0]+", "");
-                            if(bufStr.equals(DisplayController.BotPassword)) {
+                            if(bufStr.equals(progSet.getBotPassword())) {
                                 sendMsg(update.getMessage().getChat().getId().toString(), "Ok! Enter you name:");
                                 password = true;
                             }else{
@@ -184,7 +191,7 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
                             SubscriptionMenu(update);
                             break;
                         case "getstate":
-                            sendState(update, DisplayController.newChillerState,"");
+                            sendState(update, curChillerState,"");
                             break;
                         case "getchart":
                             XYSeriesCollection data = new XYSeriesCollection();

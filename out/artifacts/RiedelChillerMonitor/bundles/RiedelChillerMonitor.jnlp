@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="RiedelChillerMonitor.jnlp">
+  <information>
+    <title>TITLE</title>
+    <vendor>bit-Service</vendor>
+    <description>RiedelChillerMonitor</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="RiedelChillerMonitor.jar" size="460979" download="eager" />
+    <jar href="commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="fontawesomefx-8.2.jar" size="180341" download="eager" />
+    <jar href="gson-2.8.5.jar" size="241622" download="eager" />
+    <jar href="guava-13.0.1.jar" size="1891110" download="eager" />
+    <jar href="httpclient-4.5.jar" size="727567" download="eager" />
+    <jar href="httpcore-4.4.13.jar" size="328593" download="eager" />
+    <jar href="httpmime-4.5.14.jar" size="41727" download="eager" />
+    <jar href="jackson-annotations-2.11.4.jar" size="72086" download="eager" />
+    <jar href="jackson-core-2.11.4.jar" size="351519" download="eager" />
+    <jar href="jackson-databind-2.11.4.jar" size="1421841" download="eager" />
+    <jar href="jcommon-1.0.16.jar" size="488686" download="eager" />
+    <jar href="jfreechart-1.0.17.jar" size="1544449" download="eager" />
+    <jar href="jfreechart-fx-1.0.1.jar" size="27989" download="eager" />
+    <jar href="json-20160810.jar" size="54495" download="eager" />
+    <jar href="jssc-2.8.0.jar" size="153562" download="eager" />
+    <jar href="junit-4.12.jar" size="314932" download="eager" />
+    <jar href="slf4j-api-1.7.30.jar" size="41472" download="eager" />
+    <jar href="sqlite-jdbc-3.42.0.1.jar" size="13030925" download="eager" />
+    <jar href="telegrambots-5.0.1.jar" size="55525" download="eager" />
+    <jar href="telegrambots-abilities-5.0.1.jar" size="73004" download="eager" />
+    <jar href="telegrambots-meta-5.0.1.jar" size="829610" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="sample.Main"  name="RiedelChillerMonitor" />
+  <update check="background"/>
+</jnlp>

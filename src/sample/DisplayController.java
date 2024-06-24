@@ -3,26 +3,32 @@ package sample;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import jssc.SerialPort;
 import jssc.SerialPortEvent;
 import jssc.SerialPortEventListener;
 import jssc.SerialPortException;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.statistics.HistogramDataset;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
+import sample.units.ChillerState;
+import sample.units.ProgrammSettings;
+import sample.units.TelegramUser;
+import sample.utilits.DAO;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -33,26 +39,28 @@ public class DisplayController implements Initializable, DAO {
 
     private static SerialPort serialPort;
     public static MyTelegramBot bot = null;
-    public static String BotToken = "";
-    public static String BotPassword = "";
-
-    @FXML
-    public Pane titlePanel;
-    public static String comNumber;
-    public static Integer comBaudRate;
-    public static Integer comDataBits;
-    public static String comParity;
-    public static String comStopBits;
-    public static ChillerState oldChillerState, newChillerState;
-    public static String timeZone;
+    public String BotToken = "";
+    public String BotPassword = "";
+    public String comNumber;
+    public Integer comBaudRate;
+    public Integer comDataBits;
+    public String comParity;
+    public String comStopBits;
+    public static ChillerState newChillerState;
+    public ChillerState oldChillerState = null;
+    public String timeZone;
     @FXML
     public Label labelTpi,labelTpo,labelTso,labelTsi,labelErrors, labelDate;
+    public HBox titleBox;
+    int x,y;
+    Stage stage;
+    static ProgrammSettings programmSettings;
 
     public void botInit(){
         TelegramBotsApi botsApi;
         try {
             botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            bot = new MyTelegramBot(BotToken);
+            bot = new MyTelegramBot(BotToken, newChillerState);
             botsApi.registerBot(bot);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -61,20 +69,21 @@ public class DisplayController implements Initializable, DAO {
 
     @FXML
     public void Minimazed(MouseEvent event){
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.hide();
     }
 
     @FXML
     public void Maximazed(MouseEvent event){
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setFullScreen(true);
     }
 
     @FXML
     public void Close(MouseEvent event){
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.close();
+        System.exit(0);
     }
 
     @FXML
@@ -84,6 +93,7 @@ public class DisplayController implements Initializable, DAO {
         stageFrame.setScene(new Scene(root));
         stageFrame.initStyle(StageStyle.TRANSPARENT);
         stageFrame.show();
+        stage.hide();
     }
 
     @FXML
@@ -93,67 +103,86 @@ public class DisplayController implements Initializable, DAO {
         stageFrame.setScene(new Scene(root));
         stageFrame.initStyle(StageStyle.TRANSPARENT);
         stageFrame.show();
+        stage.hide();
     }
 
-    @FXML
-    public void Start(){
-        System.out.println("start pres");
-        Connection connection = null;
-        try {
-            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
-            Statement statement = connection.createStatement();
+    public static JFreeChart createChart() {
 
-            String selectQuery = "SELECT * FROM record";
-            ResultSet resultSet = statement.executeQuery(selectQuery);
+        double[] values = { 95, 49, 14, 59, 50, 66, 47, 40, 1, 67,
+                12, 58, 28, 63, 14, 9, 31, 17, 94, 71,
+                49, 64, 73, 97, 15, 63, 10, 12, 31, 62,
+                93, 49, 74, 90, 59, 14, 15, 88, 26, 57,
+                77, 44, 58, 91, 10, 67, 57, 19, 88, 84
+        };
 
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String data = resultSet.getString("rec");
-                System.out.println("ID: " + id + " : " + data+ "    ");
-            }
 
-            resultSet.close();
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        HistogramDataset dataset = new HistogramDataset();
+        dataset.addSeries("key", values, 20);
 
-        try {
-            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
-            Statement statement = connection.createStatement();
+        JFreeChart histogram = ChartFactory.createHistogram("JFreeChart Histogram", "y values", "x values", dataset, PlotOrientation.HORIZONTAL,true,true,true);
 
-            String selectQuery = "SELECT * FROM param";
-            ResultSet resultSet = statement.executeQuery(selectQuery);
-
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String data = resultSet.getString("name");
-                String data2 = resultSet.getString("valueStr");
-                System.out.println("ID: " + id + " : " + data+"   "+data2);
-            }
-
-            resultSet.close();
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        return histogram;
     }
+
+//    @FXML
+//    public void Start(){
+//        System.out.println("start pres");
+//        Connection connection = null;
+//        try {
+//            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
+//            Statement statement = connection.createStatement();
+//
+//            String selectQuery = "SELECT * FROM record";
+//            ResultSet resultSet = statement.executeQuery(selectQuery);
+//
+//            while (resultSet.next()) {
+//                int id = resultSet.getInt("id");
+//                String data = resultSet.getString("rec");
+//                System.out.println("ID: " + id + " : " + data+ "    ");
+//            }
+//
+//            resultSet.close();
+//            statement.close();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                if (connection != null) {
+//                    connection.close();
+//                }
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        try {
+//            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
+//            Statement statement = connection.createStatement();
+//
+//            String selectQuery = "SELECT * FROM param";
+//            ResultSet resultSet = statement.executeQuery(selectQuery);
+//
+//            while (resultSet.next()) {
+//                int id = resultSet.getInt("id");
+//                String data = resultSet.getString("name");
+//                String data2 = resultSet.getString("valueStr");
+//                System.out.println("ID: " + id + " : " + data+"   "+data2);
+//            }
+//
+//            resultSet.close();
+//            statement.close();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                if (connection != null) {
+//                    connection.close();
+//                }
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
     private class PortReader implements SerialPortEventListener {
         public void serialEvent(SerialPortEvent event) {
@@ -161,7 +190,7 @@ public class DisplayController implements Initializable, DAO {
                 try {
                     Date date = new Date();
                     String data = date.getTime()+ " : "+serialPort.readString(event.getEventValue());
-                    System.out.println(data);
+                    //System.out.println(data);
                     if(newChillerState != null){
                         oldChillerState = newChillerState;
                     }
@@ -178,7 +207,6 @@ public class DisplayController implements Initializable, DAO {
 
     public void analiseState(ChillerState chillerState){
         Platform.runLater(new Runnable() {
-
             @Override
             public void run() {
                 labelTpi.setText(chillerState.getTpi().toString());
@@ -221,6 +249,42 @@ public class DisplayController implements Initializable, DAO {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("initializ");
+        titleBox.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override public void handle(MouseEvent mouseEvent) {
+                Node node = (Node) mouseEvent.getSource();
+                stage = (Stage) node.getScene().getWindow();
+                x = (int) (stage.getX() - mouseEvent.getScreenX());
+                y = (int) (stage.getY() - mouseEvent.getScreenY());
+            }
+        });
+        titleBox.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override public void handle(MouseEvent mouseEvent) {
+                stage.setX(mouseEvent.getScreenX() + x);
+                stage.setY(mouseEvent.getScreenY() + y);
+            }
+        });
+
+        readDateFromBase();
+
+        botInit();
+        if(getLastChillerState()!=null) {
+            oldChillerState = new ChillerState(getLastChillerState());
+        }
+        newChillerState = null;
+        if(oldChillerState!=null) {
+            analiseState(oldChillerState);
+        }
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                stage = (Stage) titleBox.getScene().getWindow();
+            }
+        });
+    }
+
+    public void readDateFromBase(){
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
@@ -249,6 +313,10 @@ public class DisplayController implements Initializable, DAO {
         }
 
         comNumber = getStrParam("comnumber");
+        if(comNumber==null){
+            ClearBase();
+        }
+        comNumber = getStrParam("comnumber");
         comBaudRate = getIntParam("combaudrate");
         comDataBits = getIntParam("comdatabits");
         comParity = getStrParam("comparity");
@@ -257,18 +325,17 @@ public class DisplayController implements Initializable, DAO {
         BotPassword = getStrParam("botpassword");
         timeZone = getStrParam("timezone");
 
-
         serialPort = new SerialPort(comNumber);
         int bufSerialStopBits = 1;
         switch (comStopBits){
             case "1":
                 break;
             case "2": bufSerialStopBits = 2;
-                      break;
+                break;
             case "1.5": bufSerialStopBits = 3;
-                        break;
+                break;
             default:  bufSerialStopBits = 1;
-                      break;
+                break;
         }
 
         int bufSerialParity = 0;
@@ -300,10 +367,5 @@ public class DisplayController implements Initializable, DAO {
         catch (SerialPortException ex) {
             System.out.println(ex.getMessage());
         }
-        botInit();
-        oldChillerState = new ChillerState(getLastChillerState());
-        newChillerState = null;
-        analiseState(oldChillerState);
     }
-
 }
