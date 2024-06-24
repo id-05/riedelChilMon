@@ -2,6 +2,7 @@ package sample;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -55,6 +56,7 @@ public class DisplayController implements Initializable, DAO {
     int x,y;
     Stage stage;
     static ProgrammSettings programmSettings;
+    static String nameValue = "";
 
     public void botInit(){
         TelegramBotsApi botsApi;
@@ -104,6 +106,38 @@ public class DisplayController implements Initializable, DAO {
         stageFrame.initStyle(StageStyle.TRANSPARENT);
         stageFrame.show();
         stage.hide();
+    }
+
+    @FXML
+    public void changeValueTPI() throws IOException {
+        nameValue = "levelTpi";
+        openChangeValueForm();
+    }
+
+    @FXML
+    public void changeValueTPO() throws IOException {
+        nameValue = "levelTpo";
+        openChangeValueForm();
+    }
+
+    @FXML
+    public void changeValueTSI() throws IOException {
+        nameValue = "levelTsi";
+        openChangeValueForm();
+    }
+
+    @FXML
+    public void changeValueTSO() throws IOException {
+        nameValue = "levelTso";
+        openChangeValueForm();
+    }
+
+    public void openChangeValueForm() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("changevalueform.fxml"));
+        Stage stageFrame = new Stage();
+        stageFrame.setScene(new Scene(root));
+        stageFrame.initStyle(StageStyle.TRANSPARENT);
+        stageFrame.show();
     }
 
     public static JFreeChart createChart() {

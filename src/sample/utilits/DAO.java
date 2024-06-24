@@ -386,6 +386,30 @@ public interface DAO {
             preparedStatement.setInt(3, 1);
             preparedStatement.executeUpdate();
 
+            preparedStatement = connection.prepareStatement("INSERT INTO param (name, valueStr, valueInt) VALUES (?, ?, ?)");
+            preparedStatement.setString(1, "levelTpi");
+            preparedStatement.setString(2, "");
+            preparedStatement.setInt(3, 10);
+            preparedStatement.executeUpdate();
+
+            preparedStatement = connection.prepareStatement("INSERT INTO param (name, valueStr, valueInt) VALUES (?, ?, ?)");
+            preparedStatement.setString(1, "levelTpo");
+            preparedStatement.setString(2, "");
+            preparedStatement.setInt(3, 10);
+            preparedStatement.executeUpdate();
+
+            preparedStatement = connection.prepareStatement("INSERT INTO param (name, valueStr, valueInt) VALUES (?, ?, ?)");
+            preparedStatement.setString(1, "levelTsi");
+            preparedStatement.setString(2, "");
+            preparedStatement.setInt(3, 20);
+            preparedStatement.executeUpdate();
+
+            preparedStatement = connection.prepareStatement("INSERT INTO param (name, valueStr, valueInt) VALUES (?, ?, ?)");
+            preparedStatement.setString(1, "levelTso");
+            preparedStatement.setString(2, "");
+            preparedStatement.setInt(3, 20);
+            preparedStatement.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

@@ -1,5 +1,6 @@
 package sample;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
@@ -22,6 +23,7 @@ public class ChartController implements Initializable, DAO {
     public LineChart mainChart;
     @FXML
     public NumberAxis xAxis, yAxis;
+
     public HBox titleBox;
     public int x;
     public int y;
