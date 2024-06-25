@@ -1,6 +1,5 @@
 package sample;
 
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;

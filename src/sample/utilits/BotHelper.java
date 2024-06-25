@@ -1,6 +1,7 @@
 package sample.utilits;
 
 import com.google.gson.JsonObject;
+import org.telegram.telegrambots.meta.api.methods.groupadministration.SetChatPhoto;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public interface BotHelper {
 
-    public default SendMessage prepareMsg(String chatId, String s) {
+    public default SetChatPhoto prepareMsg(String chatId, String s) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
@@ -22,7 +23,7 @@ public interface BotHelper {
         return sendMessage;
     }
 
-    public default SendMessage prepareMsg(String chatId, String s, InlineKeyboardMarkup inlineKeyboardMarkup) {
+    public default SetChatPhoto prepareMsg(String chatId, String s, InlineKeyboardMarkup inlineKeyboardMarkup) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
@@ -32,7 +33,7 @@ public interface BotHelper {
         return sendMessage;
     }
 
-    public default EditMessageText prepareEditMsg(Update update, String text, InlineKeyboardMarkup keyboard) {
+    public default SetChatPhoto prepareEditMsg(Update update, String text, InlineKeyboardMarkup keyboard) {
         EditMessageText editMessage = new EditMessageText();
         editMessage.enableMarkdown(true);
         editMessage.setChatId(update.getCallbackQuery().getMessage().getChatId().toString());

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #335566;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DisplayController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #335566;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DisplayController">
    <top>
       <HBox fx:id="titleBox" alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="600.0" style="-fx-background-color: #ff4466;" BorderPane.alignment="CENTER">
          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Riedel Chiller Monitor" wrappingWidth="318.2578125">
@@ -51,7 +51,7 @@
                         <Insets right="200.0" />
                      </HBox.margin>
                   </Label>
-                  <FontAwesomeIcon fx:id="charticon" fill="WHITE" glyphName="LINE_CHART" onMouseClicked="#OpenChart" size="1.5em">
+                  <FontAwesomeIcon fx:id="charticon" fill="WHITE" glyphName="LINE_CHART" onMouseClicked="#OpenChart" size="1.5em" visible="false">
                      <HBox.margin>
                         <Insets right="10.0" top="5.0" />
                      </HBox.margin>
@@ -90,7 +90,17 @@
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0" />
                                     <FontAwesomeIcon fx:id="charticon1" fill="WHITE" glyphName="BELL" onMouseClicked="#changeValueTPI" size="1.5em" />
-                                    <HBox prefHeight="139.0" prefWidth="18.0" />
+                                    <HBox prefHeight="140.0" prefWidth="18.0">
+                                       <children>
+                                          <Label fx:id="levelTpi" alignment="CENTER" prefHeight="17.0" prefWidth="22.0" text="--" textFill="WHITE">
+                                             <opaqueInsets>
+                                                <Insets top="5.0" />
+                                             </opaqueInsets>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets top="5.0" />
+                                       </opaqueInsets></HBox>
                                  </children>
                               </VBox>
                            </children>
@@ -123,9 +133,16 @@
                               </Label>
                               <VBox prefHeight="100.0" prefWidth="21.0">
                                  <children>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" />
+                                    <HBox prefHeight="30.0" prefWidth="18.0" />
                                     <FontAwesomeIcon fx:id="charticon11" fill="WHITE" glyphName="BELL" onMouseClicked="#changeValueTPO" size="1.5em" />
-                                    <HBox prefHeight="139.0" prefWidth="18.0" />
+                                    <HBox prefHeight="68.0" prefWidth="18.0">
+                                       <children>
+                                          <Label fx:id="levelTpo" alignment="CENTER" prefHeight="17.0" prefWidth="22.0" text="--" textFill="WHITE">
+                                             <opaqueInsets>
+                                                <Insets top="5.0" />
+                                             </opaqueInsets>
+                                          </Label>
+                                       </children></HBox>
                                  </children>
                               </VBox>
                            </children>
@@ -161,7 +178,14 @@
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0" />
                                     <FontAwesomeIcon fx:id="charticon12" fill="WHITE" glyphName="BELL" onMouseClicked="#changeValueTSI" size="1.5em" />
-                                    <HBox prefHeight="139.0" prefWidth="18.0" />
+                                    <HBox prefHeight="140.0" prefWidth="18.0">
+                                       <children>
+                                          <Label fx:id="levelTsi" alignment="CENTER" prefHeight="17.0" prefWidth="22.0" text="--" textFill="WHITE">
+                                             <opaqueInsets>
+                                                <Insets top="5.0" />
+                                             </opaqueInsets>
+                                          </Label>
+                                       </children></HBox>
                                  </children>
                               </VBox>
                            </children>
@@ -196,7 +220,14 @@
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0" />
                                     <FontAwesomeIcon fx:id="charticon13" fill="WHITE" glyphName="BELL" onMouseClicked="#changeValueTSO" size="1.5em" />
-                                    <HBox prefHeight="139.0" prefWidth="18.0" />
+                                    <HBox prefHeight="140.0" prefWidth="18.0">
+                                       <children>
+                                          <Label fx:id="levelTso" alignment="CENTER" prefHeight="17.0" prefWidth="22.0" text="--" textFill="WHITE">
+                                             <opaqueInsets>
+                                                <Insets top="5.0" />
+                                             </opaqueInsets>
+                                          </Label>
+                                       </children></HBox>
                                  </children>
                               </VBox>
                            </children>

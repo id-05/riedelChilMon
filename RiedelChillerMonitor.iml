@@ -10,8 +10,6 @@
     <orderEntry type="library" exported="" name="fontawesomefx-8.2" level="project" />
     <orderEntry type="library" exported="" name="jssc-2.8.0" level="project" />
     <orderEntry type="library" exported="" name="sqlite-jdbc-3.42.0.1" level="project" />
-    <orderEntry type="library" exported="" name="telegrambots-5.0.1" level="project" />
-    <orderEntry type="library" exported="" name="telegrambots-meta-5.0.1" level="project" />
     <orderEntry type="library" exported="" name="gson-2.8.5" level="project" />
     <orderEntry type="library" name="slf4j-api-1.7.30" level="project" />
     <orderEntry type="library" name="jackson-annotations-2.11.4" level="project" />
@@ -22,11 +20,13 @@
     <orderEntry type="library" name="commons-logging-1.2" level="project" />
     <orderEntry type="library" name="json-20160810" level="project" />
     <orderEntry type="library" name="guava-13.0.1" level="project" />
-    <orderEntry type="library" name="telegrambots-abilities-5.0.1" level="project" />
     <orderEntry type="library" name="httpmime-4.5.14" level="project" />
     <orderEntry type="library" name="junit-4.12" level="project" />
     <orderEntry type="library" name="jcommon-1.0.16" level="project" />
     <orderEntry type="library" name="jfreechart-1.0.17" level="project" />
     <orderEntry type="library" name="jfreechart-fx-1.0.1" level="project" />
+    <orderEntry type="library" name="telegrambots-abilities-7.4.2" level="project" />
+    <orderEntry type="library" name="telegrambots-6.9.7.1" level="project" />
+    <orderEntry type="library" name="telegrambots-meta-7.4.2" level="project" />
   </component>
 </module>

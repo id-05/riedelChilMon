@@ -249,7 +249,6 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         ArrayList<MenuItem> menuItems = new ArrayList<>();
         JsonParser parser = new JsonParser();
-        System.out.println(user.getFilter());
         JsonObject jsonObject = parser.parse(user.getFilter()).getAsJsonObject();
         menuItems.add(new MenuItem("Inform me" + " : "+jsonObject.get("InformMe").getAsString(),"chSub","InformMe" + ":"+jsonObject.get("InformMe").getAsString()));
         menuItems.add(new MenuItem("Only errors" + " : "+jsonObject.get("OnlyErrors").getAsString(),"chSub","OnlyErrors" + ":"+jsonObject.get("OnlyErrors").getAsString()));

@@ -11,23 +11,21 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import jssc.SerialPort;
 import jssc.SerialPortEvent;
 import jssc.SerialPortEventListener;
 import jssc.SerialPortException;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.statistics.HistogramDataset;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import sample.units.ChillerState;
-import sample.units.ProgrammSettings;
 import sample.units.TelegramUser;
 import sample.utilits.DAO;
 import java.io.IOException;
@@ -35,6 +33,8 @@ import java.net.URL;
 import java.sql.*;
 import java.util.Date;
 import java.util.ResourceBundle;
+
+import static javafx.scene.paint.Color.WHITE;
 
 public class DisplayController implements Initializable, DAO {
 
@@ -51,12 +51,13 @@ public class DisplayController implements Initializable, DAO {
     public ChillerState oldChillerState = null;
     public String timeZone;
     @FXML
-    public Label labelTpi,labelTpo,labelTso,labelTsi,labelErrors, labelDate;
+    public Label labelTpi,labelTpo,labelTso,labelTsi,labelErrors, labelDate, levelTpi, levelTpo, levelTso, levelTsi;
     public HBox titleBox;
     int x,y;
     Stage stage;
-    static ProgrammSettings programmSettings;
+    //static ProgrammSettings programmSettings;
     static String nameValue = "";
+    int value = 0;
 
     public void botInit(){
         TelegramBotsApi botsApi;
@@ -109,114 +110,100 @@ public class DisplayController implements Initializable, DAO {
     }
 
     @FXML
-    public void changeValueTPI() throws IOException {
+    public void changeValueTPI() {
         nameValue = "levelTpi";
         openChangeValueForm();
     }
 
     @FXML
-    public void changeValueTPO() throws IOException {
+    public void changeValueTPO() {
         nameValue = "levelTpo";
         openChangeValueForm();
     }
 
     @FXML
-    public void changeValueTSI() throws IOException {
+    public void changeValueTSI() {
         nameValue = "levelTsi";
         openChangeValueForm();
     }
 
     @FXML
-    public void changeValueTSO() throws IOException {
+    public void changeValueTSO() {
         nameValue = "levelTso";
         openChangeValueForm();
     }
 
-    public void openChangeValueForm() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("changevalueform.fxml"));
-        Stage stageFrame = new Stage();
-        stageFrame.setScene(new Scene(root));
-        stageFrame.initStyle(StageStyle.TRANSPARENT);
-        stageFrame.show();
+    public void openChangeValueForm()  {
+        Dialog<String> dialog = new Dialog<>();
+        dialog.initStyle(StageStyle.TRANSPARENT);
+        dialog.getDialogPane().getStylesheets().add(getClass().getResource("customDialog.css").toExternalForm());
+        dialog.setResizable(true);
+        int width = 40;
+        Pane pane = new Pane();
+        pane.setPrefWidth(width);
+        pane.setPrefHeight(25);
+        Pane pane1 = new Pane();
+        pane1.setPrefWidth(width);
+        pane1.setPrefHeight(25);
+        Pane pane2 = new Pane();
+        pane2.setPrefWidth(width);
+        pane2.setPrefHeight(25);
+        Pane pane3 = new Pane();
+        pane3.setPrefWidth(width);
+        pane3.setPrefHeight(25);
+        Pane pane4 = new Pane();
+        pane4.setPrefWidth(width);
+        pane4.setPrefHeight(25);
+        Label labelValue = new Label();
+        labelValue.setTextFill(WHITE);
+        labelValue.setFont(Font.font("System Bold",48));
+        labelValue.setPrefWidth(55);
+        value = getIntParam(DisplayController.nameValue);
+        labelValue.setText(String.valueOf(value));
+
+        FontAwesomeIcon plus = new FontAwesomeIcon();
+        plus.setGlyphName("PLUS");
+        plus.setFill(WHITE);
+        plus.setSize("3em");
+        plus.setOnMouseClicked(event -> {
+            value++;
+            labelValue.setText(String.valueOf(value));
+        });
+
+        FontAwesomeIcon minus = new FontAwesomeIcon();
+        minus.setGlyphName("MINUS");
+        minus.setFill(WHITE);
+        minus.setSize("3em");
+        minus.setOnMouseClicked(event -> {
+            if(value>1) {
+                value--;
+            }
+            labelValue.setText(String.valueOf(value));
+        });
+
+        FontAwesomeIcon save = new FontAwesomeIcon();
+        save.setGlyphName("SAVE");
+        save.setFill(WHITE);
+        save.setSize("3em");
+        save.setOnMouseClicked(event -> {
+            saveIntParam(DisplayController.nameValue,value);
+            DialogPane dialogPane = dialog.getDialogPane();
+            Stage stageDialog = (Stage)dialogPane.getScene().getWindow();
+            stageDialog.close();
+            updateLevel();
+        });
+
+        GridPane grid = new GridPane();
+        grid.add(minus, 1, 1);
+        grid.add(pane, 2, 1);
+        grid.add(labelValue, 3, 1);
+        grid.add(pane1, 4, 1);
+        grid.add(plus, 5, 1);
+        grid.add(pane2, 2, 2);
+        grid.add(save, 3, 3);
+        dialog.getDialogPane().setContent(grid);
+        dialog.show();
     }
-
-    public static JFreeChart createChart() {
-
-        double[] values = { 95, 49, 14, 59, 50, 66, 47, 40, 1, 67,
-                12, 58, 28, 63, 14, 9, 31, 17, 94, 71,
-                49, 64, 73, 97, 15, 63, 10, 12, 31, 62,
-                93, 49, 74, 90, 59, 14, 15, 88, 26, 57,
-                77, 44, 58, 91, 10, 67, 57, 19, 88, 84
-        };
-
-
-        HistogramDataset dataset = new HistogramDataset();
-        dataset.addSeries("key", values, 20);
-
-        JFreeChart histogram = ChartFactory.createHistogram("JFreeChart Histogram", "y values", "x values", dataset, PlotOrientation.HORIZONTAL,true,true,true);
-
-        return histogram;
-    }
-
-//    @FXML
-//    public void Start(){
-//        System.out.println("start pres");
-//        Connection connection = null;
-//        try {
-//            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
-//            Statement statement = connection.createStatement();
-//
-//            String selectQuery = "SELECT * FROM record";
-//            ResultSet resultSet = statement.executeQuery(selectQuery);
-//
-//            while (resultSet.next()) {
-//                int id = resultSet.getInt("id");
-//                String data = resultSet.getString("rec");
-//                System.out.println("ID: " + id + " : " + data+ "    ");
-//            }
-//
-//            resultSet.close();
-//            statement.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                if (connection != null) {
-//                    connection.close();
-//                }
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//        try {
-//            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
-//            Statement statement = connection.createStatement();
-//
-//            String selectQuery = "SELECT * FROM param";
-//            ResultSet resultSet = statement.executeQuery(selectQuery);
-//
-//            while (resultSet.next()) {
-//                int id = resultSet.getInt("id");
-//                String data = resultSet.getString("name");
-//                String data2 = resultSet.getString("valueStr");
-//                System.out.println("ID: " + id + " : " + data+"   "+data2);
-//            }
-//
-//            resultSet.close();
-//            statement.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                if (connection != null) {
-//                    connection.close();
-//                }
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
 
     private class PortReader implements SerialPortEventListener {
         public void serialEvent(SerialPortEvent event) {
@@ -224,7 +211,6 @@ public class DisplayController implements Initializable, DAO {
                 try {
                     Date date = new Date();
                     String data = date.getTime()+ " : "+serialPort.readString(event.getEventValue());
-                    //System.out.println(data);
                     if(newChillerState != null){
                         oldChillerState = newChillerState;
                     }
@@ -271,7 +257,13 @@ public class DisplayController implements Initializable, DAO {
                         }
                     }else{
                         if(jsonObject.get("OutOfRange").getAsString().equals("on")){
-
+                            if( chillerState.getTpo()>Double.valueOf(getIntParam("levelTpo")) |
+                                    chillerState.getTpi()>Double.valueOf(getIntParam("levelTpi")) |
+                                        chillerState.getTso()>Double.valueOf(getIntParam("levelTso")) |
+                                            chillerState.getTsi()>Double.valueOf(getIntParam("levelTsi"))
+                                ){
+                                bot.sendState(tUser.getId(), chillerState, "Внимание! Одно из измеряемых значений превысило установленный лимит!");
+                            }
                         }else {
                             bot.sendState(tUser.getId(), chillerState, "Текущее состояние системы:");
                         }
@@ -283,7 +275,6 @@ public class DisplayController implements Initializable, DAO {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("initializ");
         titleBox.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override public void handle(MouseEvent mouseEvent) {
                 Node node = (Node) mouseEvent.getSource();
@@ -314,6 +305,7 @@ public class DisplayController implements Initializable, DAO {
             @Override
             public void run() {
                 stage = (Stage) titleBox.getScene().getWindow();
+                updateLevel();
             }
         });
     }
@@ -401,5 +393,12 @@ public class DisplayController implements Initializable, DAO {
         catch (SerialPortException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    public void updateLevel(){
+        levelTpi.setText(getIntParam("levelTpi").toString());
+        levelTpo.setText(getIntParam("levelTpo").toString());
+        levelTsi.setText(getIntParam("levelTsi").toString());
+        levelTso.setText(getIntParam("levelTso").toString());
     }
 }
