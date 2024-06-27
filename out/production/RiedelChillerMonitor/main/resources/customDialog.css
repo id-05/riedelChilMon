@@ -1,0 +1,20 @@
+.dialog-pane{
+    -fx-background-color: #ff4466
+}
+
+
+.dialog-pane > .button-bar > .container {
+    -fx-background-color: #ff4466
+}
+
+.dialog-pane > .content.label {
+    -fx-background-color: #ff4466;
+}
+
+.dialog-pane .button{
+    -fx-background-color: #ff4466;
+}
+
+.dialog-pane .button:hover{
+    -fx-background-color: #ff4466;
+}

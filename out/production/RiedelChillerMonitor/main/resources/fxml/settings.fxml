@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #335566;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.utilits.SettingsController">
+   <top>
+      <HBox fx:id="titleBox" alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="600.0" style="-fx-background-color: #ff4466;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Settings          ATTENTION: RESET PROGRAMM AFTER CHANGE" wrappingWidth="539.90625">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <FontAwesomeIcon fill="WHITE" glyphName="SHARE" onMouseClicked="#Close" size="1.5em">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </FontAwesomeIcon>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.33612040133779264, 0.6688963210702341" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #335566;">
+               <children>
+                  <Text fill="WHITE" layoutX="66.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COM-Port">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <VBox alignment="TOP_CENTER" layoutY="43.0" prefHeight="329.0" prefWidth="199.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="199.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Port number">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <ComboBox fx:id="portNumberComBox" onAction="#saveComPortSetting" prefWidth="150.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="199.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Baud rate">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <ComboBox fx:id="baudRateComBox" onAction="#saveComPortSetting" prefWidth="150.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="199.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Data bits">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <ComboBox fx:id="dataBitsComBox" onAction="#saveComPortSetting" prefWidth="150.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="199.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Parity">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <ComboBox fx:id="parityComBox" onAction="#saveComPortSetting" prefWidth="150.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="199.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Stop bits">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <ComboBox fx:id="stopBitComBox" onAction="#saveComPortSetting" prefWidth="150.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #335566;">
+               <children>
+                  <Text fill="WHITE" layoutX="66.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telegram">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <VBox alignment="TOP_CENTER" layoutY="43.0" prefHeight="329.0" prefWidth="199.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="68.0" prefWidth="185.0">
+                           <children>
+                              <VBox prefHeight="59.0" prefWidth="168.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Bot Token">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <TextField fx:id="textBotToken" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="68.0" prefWidth="185.0">
+                           <children>
+                              <VBox prefHeight="59.0" prefWidth="168.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Bot Password">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <PasswordField fx:id="textBotPassword" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="46.0" prefWidth="199.0">
+                           <children>
+                              <VBox prefHeight="10.0" prefWidth="168.0">
+                                 <children>
+                                    <Button fx:id="testMes" mnemonicParsing="false" onAction="#sendTestMes" prefHeight="25.0" prefWidth="176.0" text="Send Test Message" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="68.0" prefWidth="185.0">
+                           <children>
+                              <VBox prefHeight="59.0" prefWidth="168.0">
+                                 <children>
+                                    <Button fx:id="butClearUserList" mnemonicParsing="false" onAction="#ClearUserList" prefHeight="25.0" prefWidth="176.0" text="Clear User List" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #335566;">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="227.0" prefWidth="196.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="196.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Base">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Button fx:id="cleareBaseBut" alignment="CENTER" mnemonicParsing="false" onAction="#ClearOnlyRec" prefHeight="25.0" prefWidth="136.0" text="Reset Date Base" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="196.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Zone">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <ComboBox fx:id="timeZoneComboBox" onAction="#saveComPortSetting" prefWidth="150.0" />
+                           </children>
+                           <opaqueInsets>
+                              <Insets top="25.0" />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
