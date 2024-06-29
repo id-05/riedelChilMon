@@ -6,7 +6,6 @@ public class TelegramUser {
 
     private String id;
     private String Name;
-    private String subscription;
     private String filter;
 
     public TelegramUser() {
@@ -39,10 +38,9 @@ public class TelegramUser {
         this.filter = getDefaultFilter();
     }
 
-    public TelegramUser(String id, String Name, String subscription, String filter) {
+    public TelegramUser(String id, String Name, String filter) {
         this.id = id;
         this.Name = Name;
-        this.subscription = subscription;
         this.filter = filter;
     }
 

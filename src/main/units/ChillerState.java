@@ -67,7 +67,7 @@ public class ChillerState {
     public String getDate() {
         Instant instant = Instant.ofEpochMilli(Long.parseLong(date));
         ZonedDateTime z = instant.atZone(ZoneId.of(progSet.getTimeZone()));
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("hh:mm dd/MM/yyyy");
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
         return fmt.format(z);
     }
 

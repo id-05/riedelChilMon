@@ -67,10 +67,10 @@ public interface DAO {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
             Statement statement = connection.createStatement();
-            PreparedStatement prepared = connection.prepareStatement("SELECT tid, name, subscription, filter FROM telegramuser WHERE tid = ?;");
+            PreparedStatement prepared = connection.prepareStatement("SELECT tid, name, filter FROM telegramuser WHERE tid = ?;");
             prepared.setString(1, userid);
             ResultSet rs = prepared.executeQuery();
-            tUser = new TelegramUser(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4));
+            tUser = new TelegramUser(rs.getString(1),rs.getString(2),rs.getString(3));
             statement.close();
         } catch (SQLException e) {
             logging(e.getMessage());
@@ -99,7 +99,7 @@ public interface DAO {
             telegramUserList.clear();
             while (resultSet.next()) {
                 TelegramUser newUser = new TelegramUser(resultSet.getString("tid"),resultSet.getString("name"),
-                        resultSet.getString("subscription"),resultSet.getString("filter"));
+                        resultSet.getString("filter"));
                 telegramUserList.add(newUser);
             }
         } catch (SQLException e) {
@@ -127,7 +127,6 @@ public interface DAO {
             ResultSet resultSet = statement.executeQuery(selectQuery);
 
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
                 String data = resultSet.getString("rec");
                 resultList.add(new ChillerState(data));
             }
@@ -275,12 +274,13 @@ public interface DAO {
         return result;
     }
 
-    default void saveState(String data){
+    default void saveState(String data, double timecode){
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO record (rec) VALUES (?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO record (rec, timecode) VALUES (?,?)");
             preparedStatement.setString(1, data);
+            preparedStatement.setDouble(2, timecode);
             preparedStatement.executeUpdate();
             preparedStatement.close();
         } catch (SQLException e) {

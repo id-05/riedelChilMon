@@ -2,7 +2,6 @@ package main;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -39,27 +38,20 @@ public class ChartController implements Initializable, DAO {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        titleBox.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent mouseEvent) {
-                stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
-                x = (int) (stage.getX() - mouseEvent.getScreenX());
-                y = (int) (stage.getY() - mouseEvent.getScreenY());
-            }
+        titleBox.setOnMousePressed(mouseEvent -> {
+            stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
+            x = (int) (stage.getX() - mouseEvent.getScreenX());
+            y = (int) (stage.getY() - mouseEvent.getScreenY());
         });
-        titleBox.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent mouseEvent) {
-                stage.setX(mouseEvent.getScreenX() + x);
-                stage.setY(mouseEvent.getScreenY() + y);
-            }
+        titleBox.setOnMouseDragged(mouseEvent -> {
+            stage.setX(mouseEvent.getScreenX() + x);
+            stage.setY(mouseEvent.getScreenY() + y);
         });
 
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                stage = (Stage) titleBox.getScene().getWindow();
-                stage.setX(Main.stage.getX());
-                stage.setY(Main.stage.getY());
-            }
+        Platform.runLater(() -> {
+            stage = (Stage) titleBox.getScene().getWindow();
+            stage.setX(Main.stage.getX());
+            stage.setY(Main.stage.getY());
         });
 
         xAxis = new NumberAxis();
@@ -67,7 +59,7 @@ public class ChartController implements Initializable, DAO {
         yAxis = new NumberAxis();
         yAxis.setLabel("Salary (INR)");
 
-        XYChart.Series<Number, Number> data = new XYChart.Series<Number, Number>();
+        XYChart.Series<Number, Number> data = new XYChart.Series<>();
         int i = 0;
         for(ChillerState butChillerState:getAllRecors()){
             data.getData().add(new XYChart.Data<>(i, butChillerState.getTpo()));

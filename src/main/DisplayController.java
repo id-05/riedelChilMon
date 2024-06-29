@@ -4,7 +4,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,7 +27,7 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import main.units.ChillerState;
 import main.units.TelegramUser;
 import main.utilits.DAO;
-import main.utilits.MyTelegramBotNewVersion;
+import main.utilits.MyTelegramBot;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -41,7 +40,7 @@ import static main.Main.logging;
 public class DisplayController implements Initializable, DAO {
 
     private static SerialPort serialPort;
-    public static MyTelegramBotNewVersion bot = null;
+    public static MyTelegramBot bot = null;
     public String BotToken = "";
     public String BotPassword = "";
     public String comNumber;
@@ -57,7 +56,6 @@ public class DisplayController implements Initializable, DAO {
     public HBox titleBox;
     int x,y;
     Stage stage;
-    //static ProgrammSettings programmSettings;
     static String nameValue = "";
     int value = 0;
 
@@ -65,7 +63,7 @@ public class DisplayController implements Initializable, DAO {
         TelegramBotsApi botsApi;
         try {
             botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            bot = new MyTelegramBotNewVersion(BotToken, newChillerState);
+            bot = new MyTelegramBot(BotToken, newChillerState);
             botsApi.registerBot(bot);
         } catch (Exception e) {
             logging(e.getMessage());
@@ -215,15 +213,17 @@ public class DisplayController implements Initializable, DAO {
         public void serialEvent(SerialPortEvent event) {
             if(event.isRXCHAR() && event.getEventValue() > 0){
                 try {
+                    serialPort.writeString("Get data!");
                     Date date = new Date();
                     String data = date.getTime()+ " : "+serialPort.readString(event.getEventValue());
-                    serialPort.writeString("Get data!");
-                    if(newChillerState != null){
-                        oldChillerState = newChillerState;
+                    if(validateData(data)){
+                        if(newChillerState != null){
+                            oldChillerState = newChillerState;
+                        }
+                        newChillerState = new ChillerState(data);
+                        saveState(data,date.getTime());
+                        analiseState(newChillerState);
                     }
-                    newChillerState = new ChillerState(data);
-                    saveState(data);
-                    analiseState(newChillerState);
                 }
                 catch (Exception e) {
                     logging(e.getMessage());
@@ -232,17 +232,19 @@ public class DisplayController implements Initializable, DAO {
         }
     }
 
+    public boolean validateData(String data){
+        return data.contains("Tpi:") & data.contains("Tpo:") & data.contains("Tsi:") & data.contains("Tso:");
+    }
+
+
     public void analiseState(ChillerState chillerState){
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                labelTpi.setText(chillerState.getTpi().toString());
-                labelTpo.setText(chillerState.getTpo().toString());
-                labelTsi.setText(chillerState.getTsi().toString());
-                labelTso.setText(chillerState.getTso().toString());
-                labelErrors.setText(chillerState.getErrors());
-                labelDate.setText(chillerState.getDate());
-            }
+        Platform.runLater(() -> {
+            labelTpi.setText(chillerState.getTpi().toString());
+            labelTpo.setText(chillerState.getTpo().toString());
+            labelTsi.setText(chillerState.getTsi().toString());
+            labelTso.setText(chillerState.getTso().toString());
+            labelErrors.setText(chillerState.getErrors());
+            labelDate.setText(chillerState.getDate());
         });
         if(newChillerState == null){
             bot.sendStateAllUser("Бот был только что включен, последнее известное состояние системы:",chillerState);
@@ -281,19 +283,15 @@ public class DisplayController implements Initializable, DAO {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        titleBox.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent mouseEvent) {
-                Node node = (Node) mouseEvent.getSource();
-                stage = (Stage) node.getScene().getWindow();
-                x = (int) (stage.getX() - mouseEvent.getScreenX());
-                y = (int) (stage.getY() - mouseEvent.getScreenY());
-            }
+        titleBox.setOnMousePressed(mouseEvent -> {
+            Node node = (Node) mouseEvent.getSource();
+            stage = (Stage) node.getScene().getWindow();
+            x = (int) (stage.getX() - mouseEvent.getScreenX());
+            y = (int) (stage.getY() - mouseEvent.getScreenY());
         });
-        titleBox.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent mouseEvent) {
-                stage.setX(mouseEvent.getScreenX() + x);
-                stage.setY(mouseEvent.getScreenY() + y);
-            }
+        titleBox.setOnMouseDragged(mouseEvent -> {
+            stage.setX(mouseEvent.getScreenX() + x);
+            stage.setY(mouseEvent.getScreenY() + y);
         });
 
         readDateFromBase();
@@ -308,12 +306,9 @@ public class DisplayController implements Initializable, DAO {
             analiseState(oldChillerState);
         }
 
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                stage = (Stage) titleBox.getScene().getWindow();
-                updateLevel();
-            }
+        Platform.runLater(() -> {
+            stage = (Stage) titleBox.getScene().getWindow();
+            updateLevel();
         });
     }
 
@@ -323,7 +318,7 @@ public class DisplayController implements Initializable, DAO {
             connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
             Statement statement = connection.createStatement();
 
-            String createTableSql = "CREATE TABLE IF NOT EXISTS record (id INTEGER PRIMARY KEY, rec TEXT)";
+            String createTableSql = "CREATE TABLE IF NOT EXISTS record (id INTEGER PRIMARY KEY, rec TEXT, timecode REAL)";
             statement.executeUpdate(createTableSql);
 
             createTableSql = "CREATE TABLE IF NOT EXISTS param (id INTEGER PRIMARY KEY, name TEXT, valueStr TEXT, valueInt INTEGER)";
@@ -375,8 +370,6 @@ public class DisplayController implements Initializable, DAO {
 
         int bufSerialParity = 0;
         switch (comParity){
-            case "none":
-                break;
             case "even": bufSerialParity = 2;
                 break;
             case "mark": bufSerialParity = 3;

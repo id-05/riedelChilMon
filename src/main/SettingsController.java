@@ -3,7 +3,6 @@ package main;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -65,7 +64,6 @@ public class SettingsController implements Initializable, DAO {
         Main.stage.show();
         Main.stage.setX(stage.getX());
         Main.stage.setY(stage.getY());
-        //DisplayController.applyNewSetting();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.close();
         saveStrParam("bottoken", textBotToken.getText());
@@ -137,18 +135,14 @@ public class SettingsController implements Initializable, DAO {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        titleBox.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent mouseEvent) {
-                stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
-                x = (int) (stage.getX() - mouseEvent.getScreenX());
-                y = (int) (stage.getY() - mouseEvent.getScreenY());
-            }
+        titleBox.setOnMousePressed(mouseEvent -> {
+            stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
+            x = (int) (stage.getX() - mouseEvent.getScreenX());
+            y = (int) (stage.getY() - mouseEvent.getScreenY());
         });
-        titleBox.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent mouseEvent) {
-                stage.setX(mouseEvent.getScreenX() + x);
-                stage.setY(mouseEvent.getScreenY() + y);
-            }
+        titleBox.setOnMouseDragged(mouseEvent -> {
+            stage.setX(mouseEvent.getScreenX() + x);
+            stage.setY(mouseEvent.getScreenY() + y);
         });
 
         ProgrammSettings progSet = new ProgrammSettings();
@@ -174,13 +168,10 @@ public class SettingsController implements Initializable, DAO {
         textBotToken.setText(progSet.getBotToken());
         textBotPassword.setText(progSet.getBotPassword());
 
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                stage = (Stage) titleBox.getScene().getWindow();
-                stage.setX(Main.stage.getX());
-                stage.setY(Main.stage.getY());
-            }
+        Platform.runLater(() -> {
+            stage = (Stage) titleBox.getScene().getWindow();
+            stage.setX(Main.stage.getX());
+            stage.setY(Main.stage.getY());
         });
     }
 }

@@ -72,3 +72,567 @@ Sat Jun 29 21:39:35 YAKT 2024: Error send 1Error executing org.telegram.telegram
 Sat Jun 29 21:40:08 YAKT 2024: Error send 1Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
 
 Sat Jun 29 21:42:18 YAKT 2024: Error send 1Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+
+Sun Jun 30 01:40:24 YAKT 2024: String index out of range: -1
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:39:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:42:17 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:39:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:45:16 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:39:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:00 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:39:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 01:54:08 YAKT 2024: You are attempting to add an observation for the time period Sat Jun 29 04:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:14:17 YAKT 2024: String index out of range: -1
+
+Sun Jun 30 02:14:18 YAKT 2024: String index out of range: -1
+
+Sun Jun 30 02:14:20 YAKT 2024: String index out of range: -1
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:39:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:22:46 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:39:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:23:06 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:39:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:29:41 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:37:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:38:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:39:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:40:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:31:36 YAKT 2024: You are attempting to add an observation for the time period Sun Jun 30 01:41:00 YAKT 2024 but the series already contains an observation for that time period. Duplicates are not permitted.  Try using the addOrUpdate() method.
+
+Sun Jun 30 02:54:19 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sun Jun 30 02:54:20 YAKT 2024: Error removing old webhook
+
+Sun Jun 30 02:55:33 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sun Jun 30 02:55:35 YAKT 2024: Error removing old webhook
+
+Sun Jun 30 02:56:02 YAKT 2024: Error removing old webhook
+
+Sun Jun 30 03:04:06 YAKT 2024: Error removing old webhook
