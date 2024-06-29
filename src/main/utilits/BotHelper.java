@@ -5,9 +5,9 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import main.units.MenuItem;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,10 +26,19 @@ public interface BotHelper {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
-
         sendMessage.setText(s);
-        //sendMessage.disableWebPagePreview();
+        sendMessage.disableWebPagePreview();
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+        return sendMessage;
+    }
+
+    public default SendMessage prepareMsg(String chatId, String s, ReplyKeyboardMarkup replyKeyboardMarkup) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.enableMarkdown(true);
+        sendMessage.setChatId(chatId);
+        sendMessage.setText(s);
+        sendMessage.disableWebPagePreview();
+        sendMessage.setReplyMarkup(replyKeyboardMarkup);
         return sendMessage;
     }
 
@@ -89,5 +98,7 @@ public interface BotHelper {
         inlineKeyboardMarkup.setKeyboard(rowList);
         return inlineKeyboardMarkup;
     }
+
+
 }
 

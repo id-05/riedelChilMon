@@ -4,7 +4,6 @@ public class MenuItem {
     public String visibleName;
     public String firstTag;
     public String secondTag;
-
     public String getVisibleName() {
         return visibleName;
     }

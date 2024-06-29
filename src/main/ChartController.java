@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 
 public class ChartController implements Initializable, DAO {
     @FXML
-    public LineChart mainChart;
+    public LineChart<Number, Number> mainChart;
     @FXML
     public NumberAxis xAxis, yAxis;
 
@@ -39,7 +39,6 @@ public class ChartController implements Initializable, DAO {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //stage = (Stage) titleBox.getScene().getWindow();
         titleBox.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override public void handle(MouseEvent mouseEvent) {
                 stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
@@ -68,7 +67,7 @@ public class ChartController implements Initializable, DAO {
         yAxis = new NumberAxis();
         yAxis.setLabel("Salary (INR)");
 
-        XYChart.Series data = new XYChart.Series<Number, Number>();
+        XYChart.Series<Number, Number> data = new XYChart.Series<Number, Number>();
         int i = 0;
         for(ChillerState butChillerState:getAllRecors()){
             data.getData().add(new XYChart.Data<>(i, butChillerState.getTpo()));

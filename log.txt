@@ -1,0 +1,74 @@
+
+Fri Jun 28 10:15:45 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+Fri Jun 28 10:16:59 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+Fri Jun 28 23:58:54 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 00:08:43 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 00:09:24 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 00:14:03 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 00:14:27 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 00:38:06 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 00:38:52 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 00:40:56 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 01:49:57 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 01:51:57 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 01:52:11 YAKT 2024: Error send 3 Text parameter can't be empty chatId 288308220   ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=Все новости, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=Top 20, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=По словам, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null)]], resizeKeyboard=true, oneTimeKeyboard=null, selective=null, inputFieldPlaceholder=null, isPersistent=null)
+
+Sat Jun 29 18:55:18 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 18:55:38 YAKT 2024: Error send 3 Text parameter can't be empty chatId 288308220   ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=Все новости, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=Top 20, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=По словам, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null)]], resizeKeyboard=true, oneTimeKeyboard=null, selective=null, inputFieldPlaceholder=null, isPersistent=null)
+
+Sat Jun 29 18:55:43 YAKT 2024: Error send 3 Text parameter can't be empty chatId 288308220   ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=Все новости, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=Top 20, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=По словам, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null)]], resizeKeyboard=true, oneTimeKeyboard=null, selective=null, inputFieldPlaceholder=null, isPersistent=null)
+
+Sat Jun 29 18:55:53 YAKT 2024: Error send 3 Text parameter can't be empty chatId 288308220   ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=Все новости, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=Top 20, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=По словам, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null)]], resizeKeyboard=true, oneTimeKeyboard=null, selective=null, inputFieldPlaceholder=null, isPersistent=null)
+
+Sat Jun 29 18:55:59 YAKT 2024: Error send 3 Text parameter can't be empty chatId 288308220   ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=Все новости, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=Top 20, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null), KeyboardButton(text=По словам, requestContact=null, requestLocation=null, requestPoll=null, webApp=null, requestUser=null, requestChat=null, requestUsers=null)]], resizeKeyboard=true, oneTimeKeyboard=null, selective=null, inputFieldPlaceholder=null, isPersistent=null)
+
+Sat Jun 29 18:56:56 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 19:31:37 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 19:35:18 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 19:43:38 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 19:47:15 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 20:32:39 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 20:36:59 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 20:41:19 YAKT 2024: Port name - COM10; Method name - openPort(); Exception type - Port not found.
+
+Sat Jun 29 20:43:44 YAKT 2024: null
+
+Sat Jun 29 21:11:25 YAKT 2024: String index out of range: -1
+
+Sat Jun 29 21:11:27 YAKT 2024: String index out of range: -1
+
+Sat Jun 29 21:19:43 YAKT 2024: String index out of range: -1
+
+Sat Jun 29 21:19:47 YAKT 2024: String index out of range: -1
+
+Sat Jun 29 21:37:02 YAKT 2024: Error send 1Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+
+Sat Jun 29 21:37:20 YAKT 2024: String index out of range: -1
+
+Sat Jun 29 21:37:39 YAKT 2024: Error send 1Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+
+Sat Jun 29 21:39:11 YAKT 2024: Error send 1Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+
+Sat Jun 29 21:39:35 YAKT 2024: Error send 1Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+
+Sat Jun 29 21:40:08 YAKT 2024: Error send 1Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+
+Sat Jun 29 21:42:18 YAKT 2024: Error send 1Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty

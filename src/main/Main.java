@@ -7,16 +7,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import javax.imageio.ImageIO;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class Main extends Application {
 
@@ -92,22 +90,22 @@ public class Main extends Application {
             trayIcon.setPopupMenu(popup);
 
             // create a timer which periodically displays a notification message.
-            notificationTimer.schedule(
-                    new TimerTask() {
-                        @Override
-                        public void run() {
-                          //  javax.swing.SwingUtilities.invokeLater(() ->
-//                                    trayIcon.displayMessage(
-//                                            "hello",
-//                                            "The time is now " + timeFormat.format(new Date()),
-//                                            java.awt.TrayIcon.MessageType.INFO
-                                    //)
-                  //          );
-                        }
-                    },
-                    5_000,
-                    60_000
-            );
+//            notificationTimer.schedule(
+//                    new TimerTask() {
+//                        @Override
+//                        public void run() {
+//                          //  javax.swing.SwingUtilities.invokeLater(() ->
+////                                    trayIcon.displayMessage(
+////                                            "hello",
+////                                            "The time is now " + timeFormat.format(new Date()),
+////                                            java.awt.TrayIcon.MessageType.INFO
+//                                    //)
+//                  //          );
+//                        }
+//                    },
+//                    5_000,
+//                    60_000
+//            );
             // add the application tray icon to the system tray.
             tray.add(trayIcon);
         } catch (java.awt.AWTException | IOException e) {
@@ -124,15 +122,17 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        launch(args);
+    }
 
+    public static void logging(String buf){
         try {
-            FileWriter writer = new FileWriter("example.txt", true);
-            writer.append("Привет, мир!");
+            FileWriter writer = new FileWriter("log.txt", true);
+            writer.append("\n").append(String.valueOf(new Date())).append(": ").append(buf).append("\n");
             writer.close();
         } catch (IOException e) {
             System.out.println("Ошибка при записи в файл");
             e.printStackTrace();
         }
-        launch(args);
     }
 }

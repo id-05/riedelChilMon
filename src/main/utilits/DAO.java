@@ -6,6 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static main.Main.logging;
+
 public interface DAO {
 
     default void saveNewUser(TelegramUser tUser){
@@ -20,14 +22,14 @@ public interface DAO {
             preparedStatement.executeUpdate();
             preparedStatement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
     }
@@ -46,7 +48,7 @@ public interface DAO {
 
             return result != null;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
             return false;
         } finally {
             try {
@@ -54,7 +56,7 @@ public interface DAO {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
     }
@@ -71,14 +73,14 @@ public interface DAO {
             tUser = new TelegramUser(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4));
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
         return tUser;
@@ -101,14 +103,14 @@ public interface DAO {
                 telegramUserList.add(newUser);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
         return telegramUserList;
@@ -133,14 +135,14 @@ public interface DAO {
             resultSet.close();
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
         return resultList;
@@ -157,14 +159,14 @@ public interface DAO {
             preparedStatement.executeUpdate();
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
     }
@@ -180,14 +182,14 @@ public interface DAO {
             preparedStatement.executeUpdate();
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
     }
@@ -203,14 +205,14 @@ public interface DAO {
             preparedStatement.executeUpdate();
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
     }
@@ -228,14 +230,14 @@ public interface DAO {
 
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
         return result;
@@ -260,14 +262,14 @@ public interface DAO {
             }
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
         return result;
@@ -282,14 +284,14 @@ public interface DAO {
             preparedStatement.executeUpdate();
             preparedStatement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
     }
@@ -305,14 +307,14 @@ public interface DAO {
             result = resultSet.getString(2);
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
         return result;
@@ -411,14 +413,14 @@ public interface DAO {
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
     }

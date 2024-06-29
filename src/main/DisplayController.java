@@ -23,22 +23,20 @@ import jssc.SerialPort;
 import jssc.SerialPortEvent;
 import jssc.SerialPortEventListener;
 import jssc.SerialPortException;
-
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import main.units.ChillerState;
 import main.units.TelegramUser;
 import main.utilits.DAO;
 import main.utilits.MyTelegramBotNewVersion;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.Date;
+import java.util.Objects;
 import java.util.ResourceBundle;
-
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 import static javafx.scene.paint.Color.WHITE;
+import static main.Main.logging;
 
 public class DisplayController implements Initializable, DAO {
 
@@ -70,7 +68,7 @@ public class DisplayController implements Initializable, DAO {
             bot = new MyTelegramBotNewVersion(BotToken, newChillerState);
             botsApi.registerBot(bot);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logging(e.getMessage());
         }
     }
 
@@ -95,7 +93,7 @@ public class DisplayController implements Initializable, DAO {
 
     @FXML
     public void OpenSettings() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("resources/fxml/settings.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("resources/fxml/settings.fxml")));
         Stage stageFrame = new Stage();
         stageFrame.setScene(new Scene(root));
         stageFrame.initStyle(StageStyle.TRANSPARENT);
@@ -105,7 +103,7 @@ public class DisplayController implements Initializable, DAO {
 
     @FXML
     public void OpenChart() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("resources/fxml/chartform.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("resources/fxml/chartform.fxml")));
         Stage stageFrame = new Stage();
         stageFrame.setScene(new Scene(root));
         stageFrame.initStyle(StageStyle.TRANSPARENT);
@@ -137,10 +135,14 @@ public class DisplayController implements Initializable, DAO {
         openChangeValueForm();
     }
 
+    public void OpenInfo(){
+
+    }
+
     public void openChangeValueForm()  {
         Dialog<String> dialog = new Dialog<>();
         dialog.initStyle(StageStyle.TRANSPARENT);
-        dialog.getDialogPane().getStylesheets().add(getClass().getResource("resources/customDialog.css").toExternalForm());
+        dialog.getDialogPane().getStylesheets().add(Objects.requireNonNull(getClass().getResource("resources/customDialog.css")).toExternalForm());
         dialog.setResizable(true);
         int width = 40;
         Pane pane = new Pane();
@@ -215,6 +217,7 @@ public class DisplayController implements Initializable, DAO {
                 try {
                     Date date = new Date();
                     String data = date.getTime()+ " : "+serialPort.readString(event.getEventValue());
+                    serialPort.writeString("Get data!");
                     if(newChillerState != null){
                         oldChillerState = newChillerState;
                     }
@@ -223,7 +226,7 @@ public class DisplayController implements Initializable, DAO {
                     analiseState(newChillerState);
                 }
                 catch (Exception e) {
-                    System.out.println(e.getMessage());
+                    logging(e.getMessage());
                 }
             }
         }
@@ -241,7 +244,6 @@ public class DisplayController implements Initializable, DAO {
                 labelDate.setText(chillerState.getDate());
             }
         });
-        //C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:199 I/Ym/Ya:-52:52:78 Tsi:198 Pso:531 Psi:94 Tpi:68 Tpo:89 Fpo:3595 Ppi:53 Ttr:190 Htr:402 DI:BF DO:63 F:0000:0000:0000:0000
         if(newChillerState == null){
             bot.sendStateAllUser("Бот был только что включен, последнее известное состояние системы:",chillerState);
         }else{
@@ -279,7 +281,6 @@ public class DisplayController implements Initializable, DAO {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        LOGGER.info("display start");
         titleBox.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override public void handle(MouseEvent mouseEvent) {
                 Node node = (Node) mouseEvent.getSource();
@@ -296,8 +297,9 @@ public class DisplayController implements Initializable, DAO {
         });
 
         readDateFromBase();
-
+        comPortInit();
         botInit();
+
         if(getLastChillerState()!=null) {
             oldChillerState = new ChillerState(getLastChillerState());
         }
@@ -332,17 +334,19 @@ public class DisplayController implements Initializable, DAO {
 
             statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logging(e.getMessage());
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logging(e.getMessage());
             }
         }
+    }
 
+    public void comPortInit(){
         comNumber = getStrParam("comnumber");
         if(comNumber==null){
             ClearBase();
@@ -381,7 +385,7 @@ public class DisplayController implements Initializable, DAO {
                 break;
             case "odd": bufSerialParity = 1;
                 break;
-            default:  bufSerialParity = 0;
+            default:
                 break;
         }
 
@@ -396,7 +400,7 @@ public class DisplayController implements Initializable, DAO {
             serialPort.addEventListener(new PortReader(), SerialPort.MASK_RXCHAR);
         }
         catch (SerialPortException ex) {
-            System.out.println(ex.getMessage());
+            logging(ex.getMessage());
         }
     }
 
