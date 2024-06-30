@@ -139,14 +139,6 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
                             if (update.getMessage().getText().contains("all time")) {
                                 sendChart(update, "all time");
                             }
-                            if(update.getMessage().getText().contains("prepare")){
-                                generateData();
-                            }
-                            if(update.getMessage().getText().contains("out")){
-                                List<ChillerState> resultlist = getAllRecords();
-
-                            }
-
                     }
                 }else{
                     if(registerStart){
@@ -210,32 +202,6 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
                     break;
             }
         }
-    }
-
-    public void generateData(){
-
-        String buf = "C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:199 I/Ym/Ya:-52:52:78 Tsi:198 Pso:531 Psi:94 Tpi:65 Tpo:86 Fpo:3623 Ppi:53 Ttr:187 Htr:401 DI:BF DO:63 F:0000:0000:0000:1000";
-        Date date = new Date();
-        saveState(date.getTime()+" : "+buf,date.getTime()-2*86400000);
-        buf = "C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:179 I/Ym/Ya:-52:52:78 Tsi:298 Pso:531 Psi:94 Tpi:45 Tpo:36 Fpo:3623 Ppi:53 Ttr:187 Htr:401 DI:BF DO:63 F:0000:0000:0000:1000";
-        saveState(date.getTime()+" : "+buf,date.getTime()-3*86400000);
-        buf = "C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:279 I/Ym/Ya:-52:52:78 Tsi:228 Pso:531 Psi:94 Tpi:55 Tpo:26 Fpo:3623 Ppi:53 Ttr:187 Htr:401 DI:BF DO:63 F:0000:0000:0000:1000";
-        saveState(date.getTime()+" : "+buf,date.getTime()-4*86400000);
-
-        buf = "C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:230 I/Ym/Ya:-52:52:78 Tsi:200 Pso:531 Psi:94 Tpi:25 Tpo:26 Fpo:3623 Ppi:53 Ttr:187 Htr:401 DI:BF DO:63 F:0000:0000:0000:1000";
-        saveState(date.getTime()+" : "+buf,date.getTime()-10*86400000);
-        buf = "C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:220 I/Ym/Ya:-52:52:78 Tsi:210 Pso:531 Psi:94 Tpi:35 Tpo:29 Fpo:3623 Ppi:53 Ttr:187 Htr:401 DI:BF DO:63 F:0000:0000:0000:1000";
-        saveState(date.getTime()+" : "+buf,date.getTime()-11*86400000);
-        buf = "C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:200 I/Ym/Ya:-52:52:78 Tsi:205 Pso:531 Psi:94 Tpi:45 Tpo:30 Fpo:3623 Ppi:53 Ttr:187 Htr:401 DI:BF DO:63 F:0000:0000:0000:1000";
-        saveState(date.getTime()+" : "+buf,date.getTime()-12*86400000);
-
-        buf = "C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:189 I/Ym/Ya:-52:52:78 Tsi:190 Pso:531 Psi:94 Tpi:55 Tpo:31 Fpo:3623 Ppi:53 Ttr:187 Htr:401 DI:BF DO:63 F:0000:0000:0000:1000";
-        saveState(date.getTime()+" : "+buf,date.getTime()-21*86400000);
-        buf = "C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:179 I/Ym/Ya:-52:52:78 Tsi:195 Pso:531 Psi:94 Tpi:65 Tpo:32 Fpo:3623 Ppi:53 Ttr:187 Htr:401 DI:BF DO:63 F:0000:0000:0000:1000";
-        saveState(date.getTime()+" : "+buf,date.getTime()-23*86400000);
-        buf = "C:3 dp:437 I/Yp/Ya:1000:1000:1000 Tso:169 I/Ym/Ya:-52:52:78 Tsi:170 Pso:531 Psi:94 Tpi:75 Tpo:33 Fpo:3623 Ppi:53 Ttr:187 Htr:401 DI:BF DO:63 F:0000:0000:0000:1000";
-        saveState(date.getTime()+" : "+buf,date.getTime()-24*86400000);
-        System.out.println("prepare !");
     }
 
     public void sendChart(Update update, String timeperiod) {

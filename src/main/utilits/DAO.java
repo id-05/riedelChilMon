@@ -170,6 +170,7 @@ public interface DAO {
                 stopTag = date.getTime();
                 startTag = 0;
                 break;
+
             default: break;
         }
         Connection connection = null;

@@ -43,7 +43,7 @@
          <children>
             <HBox alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="600.0">
                <children>
-                  <FontAwesomeIcon fx:id="infoicon" fill="WHITE" glyphName="INFO" onMouseClicked="#OpenInfo" size="1.5em" wrappingWidth="150.0" visible="false"/>
+                  <FontAwesomeIcon fx:id="infoicon" fill="WHITE" glyphName="INFO" onMouseClicked="#OpenInfo" size="1.5em" visible="false" wrappingWidth="150.0" />
                   <Label fx:id="labelDate" contentDisplay="CENTER" text="hh:mm dd/MM/yyyy" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -267,6 +267,29 @@
                <padding>
                   <Insets top="20.0" />
                </padding>
+            </HBox>
+            <HBox prefHeight="24.0" prefWidth="600.0">
+               <children>
+                  <Label text=" STATUS: " textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="5.0" top="3.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="labelStatus" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="--">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
             </HBox>
          </children>
       </VBox>

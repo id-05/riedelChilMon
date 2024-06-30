@@ -108,9 +108,9 @@ public class Main extends Application {
 //            );
             // add the application tray icon to the system tray.
             tray.add(trayIcon);
-        } catch (java.awt.AWTException | IOException e) {
-            System.out.println("Unable to init system tray");
+        } catch (Exception e) {
             e.printStackTrace();
+            logging(e.getMessage());
         }
     }
 

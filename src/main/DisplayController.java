@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import jssc.SerialPort;
@@ -54,6 +55,9 @@ public class DisplayController implements Initializable, DAO {
     @FXML
     public Label labelTpi,labelTpo,labelTso,labelTsi,labelErrors, labelDate, levelTpi, levelTpo, levelTso, levelTsi;
     public HBox titleBox;
+    @FXML
+    Text labelStatus;
+    String status = "OK";
     int x,y;
     Stage stage;
     static String nameValue = "";
@@ -67,6 +71,7 @@ public class DisplayController implements Initializable, DAO {
             botsApi.registerBot(bot);
         } catch (Exception e) {
             logging(e.getMessage());
+            status = "ERROR TELEGRAM BOT CONNECTION";
         }
     }
 
@@ -393,6 +398,7 @@ public class DisplayController implements Initializable, DAO {
         }
         catch (SerialPortException ex) {
             logging(ex.getMessage());
+            status = "ERROR OPEN COM PORT";
         }
     }
 
@@ -401,5 +407,6 @@ public class DisplayController implements Initializable, DAO {
         levelTpo.setText(getIntParam("levelTpo").toString());
         levelTsi.setText(getIntParam("levelTsi").toString());
         levelTso.setText(getIntParam("levelTso").toString());
+        labelStatus.setText(status);
     }
 }
