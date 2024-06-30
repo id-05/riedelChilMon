@@ -22,9 +22,9 @@ public class ChartController implements Initializable, DAO {
     @FXML
     public NumberAxis xAxis, yAxis;
 
-    public HBox titleBox;
-    public int x;
-    public int y;
+    HBox titleBox;
+    int x;
+    int y;
     Stage stage;
 
     @FXML
@@ -61,7 +61,7 @@ public class ChartController implements Initializable, DAO {
 
         XYChart.Series<Number, Number> data = new XYChart.Series<>();
         int i = 0;
-        for(ChillerState butChillerState:getAllRecors()){
+        for(ChillerState butChillerState:getAllRecords()){
             data.getData().add(new XYChart.Data<>(i, butChillerState.getTpo()));
             i++;
         }

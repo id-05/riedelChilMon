@@ -4,8 +4,8 @@ import main.units.ChillerState;
 import main.units.TelegramUser;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-
 import static main.Main.logging;
 
 public interface DAO {
@@ -14,7 +14,6 @@ public interface DAO {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
-
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO telegramuser (tid,name,filter) VALUES (?,?,?)");
             preparedStatement.setString(1, tUser.getId());
             preparedStatement.setString(2, tUser.getName());
@@ -45,7 +44,6 @@ public interface DAO {
             ResultSet rs = prepared.executeQuery();
             result = rs.getString(1);
             statement.close();
-
             return result != null;
         } catch (SQLException e) {
             logging(e.getMessage());
@@ -90,13 +88,11 @@ public interface DAO {
     default List<TelegramUser> getAllTelegramUser(){
         List<TelegramUser> telegramUserList = new ArrayList<>();
         Connection connection = null;
-        String result = null;
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
             Statement statement = connection.createStatement();
             String selectQuery = "SELECT * FROM telegramuser";
             ResultSet resultSet = statement.executeQuery(selectQuery);
-            telegramUserList.clear();
             while (resultSet.next()) {
                 TelegramUser newUser = new TelegramUser(resultSet.getString("tid"),resultSet.getString("name"),
                         resultSet.getString("filter"));
@@ -116,7 +112,7 @@ public interface DAO {
         return telegramUserList;
     }
 
-    default List<ChillerState> getAllRecors(){
+    default List<ChillerState> getAllRecords(){
         List<ChillerState> resultList = new ArrayList<>();
         Connection connection = null;
         try {
@@ -128,9 +124,66 @@ public interface DAO {
 
             while (resultSet.next()) {
                 String data = resultSet.getString("rec");
+                double code = resultSet.getDouble("timecode");
                 resultList.add(new ChillerState(data));
             }
 
+            resultSet.close();
+            statement.close();
+        } catch (SQLException e) {
+            logging(e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                logging(e.getMessage());
+            }
+        }
+        return resultList;
+    }
+
+    default List<ChillerState> getRecordsBetween(String timeperiod){
+        List<ChillerState> resultList = new ArrayList<>();
+        double startTag = 0;
+        double stopTag = 0;
+        double dayOnSec = 86400000;
+        Date date = new Date();
+        switch (timeperiod){
+            case "day":
+                stopTag = date.getTime();
+                startTag = stopTag - dayOnSec;
+                break;
+
+            case "week":
+                stopTag = date.getTime();
+                startTag = stopTag - 7*dayOnSec;
+                break;
+
+            case "mounth":
+                stopTag = date.getTime();
+                startTag = stopTag - 30*dayOnSec;
+                break;
+
+            case "all time":
+                stopTag = date.getTime();
+                startTag = 0;
+                break;
+            default: break;
+        }
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
+            Statement statement = connection.createStatement();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM record WHERE (timecode) BETWEEN (?) AND (?)");
+            preparedStatement.setDouble(1, startTag);
+            preparedStatement.setDouble(2, stopTag);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String data = resultSet.getString("rec");
+                resultList.add(new ChillerState(data));
+            }
             resultSet.close();
             statement.close();
         } catch (SQLException e) {
@@ -152,7 +205,7 @@ public interface DAO {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
             Statement statement = connection.createStatement();
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE param SET valueStr = ? WHERE name=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE param SET valueStr = ? WHERE name = ?");
             preparedStatement.setString(1, value);
             preparedStatement.setString(2, name);
             preparedStatement.executeUpdate();
@@ -222,7 +275,7 @@ public interface DAO {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:rcm.db");
             Statement statement = connection.createStatement();
-            PreparedStatement prepared = connection.prepareStatement("SELECT name, valueInt FROM param WHERE name = ?;");
+            PreparedStatement prepared = connection.prepareStatement("SELECT name, valueInt FROM param WHERE name = ?");
             prepared.setString(1, name);
             ResultSet rs = prepared.executeQuery();
             result = rs.getInt(2);

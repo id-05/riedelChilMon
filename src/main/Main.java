@@ -128,7 +128,7 @@ public class Main extends Application {
     public static void logging(String buf){
         try {
             FileWriter writer = new FileWriter("log.txt", true);
-            writer.append("\n").append(String.valueOf(new Date())).append(": ").append(buf).append("\n");
+            writer.append(String.valueOf(new Date())).append(": ").append(buf).append("\n");
             writer.close();
         } catch (IOException e) {
             System.out.println("Ошибка при записи в файл");

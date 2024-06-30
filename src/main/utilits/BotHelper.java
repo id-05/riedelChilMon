@@ -83,22 +83,5 @@ public interface BotHelper {
         inlineKeyboardMarkup.setKeyboard(rowList);
         return inlineKeyboardMarkup;
     }
-
-    public default InlineKeyboardMarkup getSettingsMenu(){
-        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
-        ArrayList<MenuItem> menuItems = new ArrayList<>();
-        menuItems.add(new MenuItem("Разрешить информировать меня","settings","mainrule"));
-        menuItems.add(new MenuItem("Фильтр по цене закупок","settings","filtrprice"));
-        menuItems.add(new MenuItem("Добавить Котрагента","settings","addkontragent"));
-        menuItems.add(new MenuItem("Удалить Котрагента","settings","deletekontragent"));
-        menuItems.add(new MenuItem("Добавить Группу","settings","addgroup"));
-        menuItems.add(new MenuItem("Удалить Группу","settings","deletegroup"));
-        menuItems.add(new MenuItem("Назад","back","main"));
-        List<List<InlineKeyboardButton>> rowList = getMenuFromItemList(menuItems);//new ArrayList<>();
-        inlineKeyboardMarkup.setKeyboard(rowList);
-        return inlineKeyboardMarkup;
-    }
-
-
 }
 

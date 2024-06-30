@@ -164,7 +164,6 @@ public class DisplayController implements Initializable, DAO {
         labelValue.setPrefWidth(55);
         value = getIntParam(DisplayController.nameValue);
         labelValue.setText(String.valueOf(value));
-
         FontAwesomeIcon plus = new FontAwesomeIcon();
         plus.setGlyphName("PLUS");
         plus.setFill(WHITE);
