@@ -27,6 +27,30 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/../jar_files/telegrambots-meta-6.9.7.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../jar_files/jackson-core-2.11.4.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../jar_files/commons-lang3-3.1.jar" path-in-jar="/" />
+      <element id="library" level="project" name="commons-lang3-3.1" />
+      <element id="library" level="project" name="commons-logging-1.2" />
+      <element id="library" level="project" name="fontawesomefx-8.2" />
+      <element id="library" level="project" name="gson-2.8.5" />
+      <element id="library" level="project" name="guava-13.0.1" />
+      <element id="library" level="project" name="httpclient-4.5" />
+      <element id="library" level="project" name="httpcore-4.4.13" />
+      <element id="library" level="project" name="httpmime-4.5.14" />
+      <element id="library" level="project" name="jackson-annotations-2.11.4" />
+      <element id="library" level="project" name="jackson-core-2.11.4" />
+      <element id="library" level="project" name="jackson-databind-2.11.4" />
+      <element id="library" level="project" name="jcommon-1.0.16" />
+      <element id="library" level="project" name="jfreechart-1.0.17" />
+      <element id="library" level="project" name="jfreechart-fx-1.0.1" />
+      <element id="library" level="project" name="json-20160810" />
+      <element id="library" level="project" name="jssc-2.8.0" />
+      <element id="library" level="project" name="junit-4.12" />
+      <element id="library" level="project" name="retrofit-2.9.0" />
+      <element id="library" level="project" name="slf4j-api-2.0.13" />
+      <element id="library" level="project" name="slf4j-nop-2.0.13" />
+      <element id="library" level="project" name="sqlite-jdbc-3.42.0.1" />
+      <element id="library" level="project" name="telegrambots-6.9.7.1" />
+      <element id="library" level="project" name="telegrambots-abilities-7.4.2" />
+      <element id="library" level="project" name="telegrambots-meta-6.9.7.1" />
     </root>
   </artifact>
 </component>
