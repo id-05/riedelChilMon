@@ -5,6 +5,7 @@
 
 ### Description
 
+- Verified on controller 2NK6 931;
 - Program for remote viewing of Riedel Chiller controller parameters;
 - Cross-platform console application;
 - Hiding in a trey;
@@ -29,13 +30,14 @@ After making a change to apply the settings, the program needs to be restarted (
 
 - Please note that the bot will not be able to send you information if the device does not have Internet access;
 
-# [Download Riedel Chiller Monitor](https://github.com/id-05/RiedelChillerMonitor/raw/master/out/artifacts/RiedelChillerMonitor_jar/RiedelChillerMonitor.jar)
+# [Download Riedel Chiller Monitor](https://github.com/id-05/riedelChilMon/blob/master/out/artifacts/RiedelChillerMonitor_jar/RiedelChillerMonitor.jar)
 
 
 # Magnet Monitor Remote Viewer
 
 ### Описание
 
+- Проверено на контроллере 2NK6 931 из шкафа климатики MRI Canon Vantage Titan;
 - Программа для удаленного просмотра параметров Riedel Chiller Monitor;
 - Кросплатформенное консольное приложение;
 - Прячется в трей;
@@ -58,4 +60,4 @@ After making a change to apply the settings, the program needs to be restarted (
 - Обратите внимание, что бот не сможет передать вам информацию, если на устройстве не будет доступа в интернет;
 
 
-# [Скачать Riedel Chiller Monitor](https://github.com/id-05/RiedelChillerMonitor/raw/master/out/artifacts/RiedelChillerMonitor_jar/RiedelChillerMonitor.jar)
+# [Скачать Riedel Chiller Monitor](https://github.com/id-05/riedelChilMon/blob/master/out/artifacts/RiedelChillerMonitor_jar/RiedelChillerMonitor.jar)
