@@ -225,7 +225,7 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
         TimeSeries seriesTpo = new TimeSeries("Tpo");
         TimeSeries seriesTsi = new TimeSeries("Tsi");
         TimeSeries seriesTso = new TimeSeries("Tso");
-        DateFormat format = new SimpleDateFormat("hh:mm d/MM/yyyy", Locale.ENGLISH);
+        DateFormat format = new SimpleDateFormat("HH:mm d/MM/yyyy", Locale.ENGLISH);
         for(ChillerState bufChillerState:getRecordsBetween(timeperiod)){
             try {
                 date = format.parse(bufChillerState.getDate());
@@ -243,7 +243,7 @@ public class MyTelegramBot extends TelegramLongPollingBot implements BotHelper, 
         data.addSeries(seriesTsi);
         data.addSeries(seriesTso);
         JFreeChart chart = ChartFactory.createTimeSeriesChart(
-                "T(t) last "+timeperiod, "time", "Temperature", data, true, false, false);
+                "T(t) "+timeperiod, "time", "Temperature", data, true, false, false);
         File file = new File("./source.png");
         try {
             ChartUtilities.saveChartAsPNG(file, chart, 500, 300);

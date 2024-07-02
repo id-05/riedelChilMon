@@ -125,6 +125,7 @@ public interface DAO {
             while (resultSet.next()) {
                 String data = resultSet.getString("rec");
                 double code = resultSet.getDouble("timecode");
+                System.out.println(code+" / "+data);
                 resultList.add(new ChillerState(data));
             }
 

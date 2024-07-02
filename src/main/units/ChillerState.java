@@ -77,7 +77,11 @@ public class ChillerState {
         Tsi = Double.parseDouble((data.substring(data.indexOf("Tsi:"))).substring(4,(data.substring(data.indexOf("Tsi:"))).indexOf(" ")))/10;
         Tso = Double.parseDouble((data.substring(data.indexOf("Tso:"))).substring(4,(data.substring(data.indexOf("Tso:"))).indexOf(" ")))/10;
         Fpo = (data.substring(data.indexOf("Fpo:"))).substring(4,(data.substring(data.indexOf("Fpo:"))).indexOf(" "));
-        errors = data.substring(data.indexOf("F:")+2,data.indexOf("F:")+21);
+        if(data.contains(" F:")) {
+            errors = data.substring(data.indexOf("F:") + 2, data.indexOf("F:") + 21);
+        }else{
+            errors = "date:not:have:error";
+        }
         date = data.substring(0,data.indexOf(" "));
     }
 }

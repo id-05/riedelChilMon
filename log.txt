@@ -78,3 +78,31 @@ Sun Jun 30 19:12:27 YAKT 2024: Error send 1Unable to execute sendmessage method
 Sun Jun 30 19:13:23 YAKT 2024: Error removing old webhook
 Sun Jun 30 19:13:23 YAKT 2024: Error send 1Unable to execute sendmessage method
 Sun Jun 30 19:13:24 YAKT 2024: Can't get input stream from URL!
+Tue Jul 02 20:19:05 YAKT 2024: Port name - COM7; Method name - openPort(); Exception type - Port not found.
+Tue Jul 02 20:19:06 YAKT 2024: Error removing old webhook
+Tue Jul 02 20:19:06 YAKT 2024: Error send 1Unable to execute sendmessage method
+Tue Jul 02 20:19:07 YAKT 2024: Can't get input stream from URL!
+Tue Jul 02 20:32:41 YAKT 2024: Port name - COM7; Method name - openPort(); Exception type - Port not found.
+Tue Jul 02 20:32:42 YAKT 2024: Error removing old webhook
+Tue Jul 02 20:32:42 YAKT 2024: Error send 1Unable to execute sendmessage method
+Tue Jul 02 20:32:42 YAKT 2024: Can't get input stream from URL!
+Tue Jul 02 20:33:31 YAKT 2024: Port name - COM7; Method name - openPort(); Exception type - Port not found.
+Tue Jul 02 20:33:32 YAKT 2024: Error removing old webhook
+Tue Jul 02 20:33:32 YAKT 2024: Error send 1Unable to execute sendmessage method
+Tue Jul 02 20:33:32 YAKT 2024: Can't get input stream from URL!
+Tue Jul 02 20:44:37 YAKT 2024: Port name - COM7; Method name - openPort(); Exception type - Port not found.
+Tue Jul 02 20:44:38 YAKT 2024: Error removing old webhook
+Tue Jul 02 20:44:38 YAKT 2024: Error send 1Unable to execute sendmessage method
+Tue Jul 02 20:44:38 YAKT 2024: Can't get input stream from URL!
+Tue Jul 02 21:14:30 YAKT 2024: Port name - COM7; Method name - openPort(); Exception type - Port not found.
+Tue Jul 02 21:14:30 YAKT 2024: Error removing old webhook
+Tue Jul 02 21:14:30 YAKT 2024: Error send 1Unable to execute sendmessage method
+Tue Jul 02 21:14:31 YAKT 2024: Can't get input stream from URL!
+Tue Jul 02 21:16:01 YAKT 2024: Port name - COM7; Method name - openPort(); Exception type - Port not found.
+Tue Jul 02 21:16:02 YAKT 2024: Error removing old webhook
+Tue Jul 02 21:16:02 YAKT 2024: Error send 1Unable to execute sendmessage method
+Tue Jul 02 21:16:02 YAKT 2024: Can't get input stream from URL!
+Tue Jul 02 21:31:09 YAKT 2024: Port name - COM7; Method name - openPort(); Exception type - Port not found.
+Tue Jul 02 21:31:11 YAKT 2024: Error removing old webhook
+Tue Jul 02 21:31:11 YAKT 2024: Error send 1Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [404] Not Found
+Tue Jul 02 21:31:36 YAKT 2024: Port name - COM7; Method name - openPort(); Exception type - Port not found.

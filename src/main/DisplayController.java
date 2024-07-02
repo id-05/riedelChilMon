@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import static javafx.scene.paint.Color.WHITE;
@@ -217,7 +218,7 @@ public class DisplayController implements Initializable, DAO {
         public void serialEvent(SerialPortEvent event) {
             if(event.isRXCHAR() && event.getEventValue() > 0){
                 try {
-                    serialPort.writeString("Get data!");
+                    //serialPort.writeString("Get data!");
                     Date date = new Date();
                     String data = date.getTime()+ " : "+serialPort.readString(event.getEventValue());
                     if(validateData(data)){
@@ -237,7 +238,7 @@ public class DisplayController implements Initializable, DAO {
     }
 
     public boolean validateData(String data){
-        return data.contains("Tpi:") & data.contains("Tpo:") & data.contains("Tsi:") & data.contains("Tso:");
+        return true;//data.contains("Tpi:") & data.contains("Tpo:") & data.contains("Tsi:") & data.contains("Tso:");
     }
 
 

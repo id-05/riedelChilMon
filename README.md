@@ -1,4 +1,5 @@
 ![](https://github.com/id-05/riedelChilMon/blob/master/images/preview.jpg)
+![](https://github.com/id-05/riedelChilMon/blob/master/images/title.png)
 
 
 # Riedel Chiller Monitor for Canon MRI System
